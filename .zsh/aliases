@@ -1,1 +1,0 @@
-alias config='/usr/bin/git --git-dir=/Users/mika/.cfg/ --work-tree=/Users/mika'
