@@ -273,7 +273,7 @@ nnoremap <silent> <F3> :NERDTreeToggle<CR>
 nnoremap <silent> <leader>f :Rgrep<CR>
 let Grep_Default_Options = '-ir'
 let Grep_Skip_Files = '*.log *.db'
-let Grep_Skip_Dirs = '.git node_modules'
+let Grep_Skip_Dirs = '.git node_modules *node_modules*'
 
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
