@@ -267,7 +267,7 @@ let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
-nnoremap <silent> <F3> :NERDTreeToggle<CR>
+nnoremap <silent> <leader>F :NERDTreeToggle<CR>
 
 " grep.vim
 nnoremap <silent> <leader>f :Rgrep<CR>
@@ -610,7 +610,7 @@ else
 endif
 
 " COC
-let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-jedi', 'coc-tsserver', 'coc-eslint', 'coc-json', 'coc-prettier', 'coc-vetur', 'coc-pairs', 'coc-python']
+let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-jedi', 'coc-tsserver', 'coc-eslint', 'coc-json', 'coc-prettier', 'coc-vetur', 'coc-pairs']
 let g:coc_disable_transparent_cursor = 1
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
