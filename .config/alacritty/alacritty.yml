@@ -2,5 +2,4 @@ font:
   normal:
     family: "MesloLGS NF"
 window:
-  startup_mode: SimpleFullscreen 
-  decorations: none
+  startup_mode: Fullscreen 

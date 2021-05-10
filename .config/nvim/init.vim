@@ -270,7 +270,7 @@ nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <leader>F :NERDTreeToggle<CR>
 
 " grep.vim
-nnoremap <silent> <leader>f :Rgrep<CR>
+nmap <silent> <leader>s :Rgrep<CR>
 let Grep_Default_Options = '-ir'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules *node_modules*'
@@ -620,6 +620,12 @@ vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>ca <Plug>(coc-codeaction)
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
