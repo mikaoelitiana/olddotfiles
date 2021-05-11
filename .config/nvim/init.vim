@@ -99,6 +99,7 @@ Plug 'pantharshit00/vim-prisma'
 Plug 'davidhalter/jedi-vim'
 Plug 'nvie/vim-flake8'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+Plug 'tell-k/vim-autopep8'
 
 " typescript
 Plug 'leafgarland/typescript-vim'
