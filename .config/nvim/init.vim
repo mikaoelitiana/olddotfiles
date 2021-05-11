@@ -58,6 +58,7 @@ Plug 'tomasr/molokai'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'vim-test/vim-test'
 Plug 'danro/rename.vim'
+Plug 'tpope/vim-dispatch'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -273,7 +274,7 @@ nnoremap <silent> <leader>F :NERDTreeToggle<CR>
 nmap <silent> <leader>s :Rgrep<CR>
 let Grep_Default_Options = '-ir'
 let Grep_Skip_Files = '*.log *.db'
-let Grep_Skip_Dirs = '.git node_modules *node_modules*'
+let Grep_Skip_Dirs = '.git node_modules'
 
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
@@ -653,12 +654,13 @@ nmap <silent> t<C-g> :TestVisit<CR>
 if has('nvim')
   tmap <C-o> <C-\><C-n>
 endif
-let test#strategy = "neovim"
+let test#strategy = "dispatch_background"
 function! JestStrategy(cmd)
   let testName = matchlist(a:cmd, '\v -t ''(.*)''')[1]
   call vimspector#LaunchWithSettings( #{ configuration: 'jest', TestName: testName } )
 endfunction
 let g:test#custom_strategies = {'jest': function('JestStrategy')}
+let test#neovim#term_position = "botright 30"
 
 "-- FOLDING --  
 set foldmethod=syntax "syntax highlighting items specify folds  
