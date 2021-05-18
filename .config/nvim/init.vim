@@ -59,6 +59,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'vim-test/vim-test'
 Plug 'danro/rename.vim'
 Plug 'tpope/vim-dispatch'
+Plug 'neomake/neomake'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -75,10 +76,6 @@ Plug 'Shougo/vimproc.vim', {'do': g:make}
 "" Vim-Session
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
-
-"" Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 
 "*****************************************************************************
 "" Custom bundles
@@ -354,7 +351,7 @@ nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
 
 "" Tabs
-nnoremap <Tab> gt
+nnoremap <leader> <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <silent> <S-t> :tabnew<CR>
 
@@ -391,12 +388,6 @@ nnoremap <silent> <leader>e :FZF -m<CR>
 " ctrl-c & ctrl-v to split
 "Recovery commands from history through FZF
 nmap <leader>y :History:<CR>
-
-" snippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-let g:UltiSnipsEditSplit="vertical"
 
 " ale
 let g:ale_linters = {}
@@ -655,7 +646,7 @@ nmap <silent> t<C-g> :TestVisit<CR>
 if has('nvim')
   tmap <C-o> <C-\><C-n>
 endif
-let test#strategy = "dispatch_background"
+let test#strategy = "neomake"
 function! JestStrategy(cmd)
   let testName = matchlist(a:cmd, '\v -t ''(.*)''')[1]
   call vimspector#LaunchWithSettings( #{ configuration: 'jest', TestName: testName } )
@@ -668,3 +659,13 @@ set foldmethod=syntax "syntax highlighting items specify folds
 set foldcolumn=1 "defines 1 col at window left, to indicate folding  
 let javaScript_fold=1 "activate folding by JS syntax  
 set foldlevelstart=99 "start file with all folds opened
+
+" -- autopep8 --
+let g:autopep8_on_save = 1
+let g:autopep8_disable_show_diff=1
+
+" -- xml -- 
+augroup xml
+    autocmd!
+    autocmd FileType xml setlocal foldmethod=indent foldlevelstart=999 foldminlines=0
+augroup END
