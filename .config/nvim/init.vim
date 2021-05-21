@@ -60,6 +60,9 @@ Plug 'vim-test/vim-test'
 Plug 'danro/rename.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'neomake/neomake'
+Plug 'ruanyl/vim-gh-line'
+Plug 'kshenoy/vim-signature'
+Plug 'justinmk/vim-sneak'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -269,7 +272,7 @@ nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <leader>F :NERDTreeToggle<CR>
 
 " grep.vim
-nmap <silent> <leader>s :Rgrep<CR>
+nmap <silent> <leader>se :Rgrep<CR>
 let Grep_Default_Options = '-ir'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
@@ -646,7 +649,7 @@ nmap <silent> t<C-g> :TestVisit<CR>
 if has('nvim')
   tmap <C-o> <C-\><C-n>
 endif
-let test#strategy = "neomake"
+let test#strategy = "dispatch"
 function! JestStrategy(cmd)
   let testName = matchlist(a:cmd, '\v -t ''(.*)''')[1]
   call vimspector#LaunchWithSettings( #{ configuration: 'jest', TestName: testName } )
