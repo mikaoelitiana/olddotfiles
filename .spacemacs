@@ -39,7 +39,7 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
+     auto-completion
      ;; better-defaults
      emacs-lisp
      git
@@ -58,6 +58,8 @@ This function should only modify configuration layer settings."
      html
      (typescript :variables
                 typescript-fmt-on-save t
+                typescript-backend 'lsp
+                typescript-lsp-linter nil
                 typescript-fmt-tool 'prettier
                 typescript-linter 'eslint)
      react
