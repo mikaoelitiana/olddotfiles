@@ -67,6 +67,7 @@ This function should only modify configuration layer settings."
      '((python :variables
                python-test-runner '(pytest nose)
                python-enable-yapf-format-on-save t))
+     markdown
      )
 
 
