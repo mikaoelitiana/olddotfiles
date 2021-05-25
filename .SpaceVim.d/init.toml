@@ -32,6 +32,7 @@
     default_indent = 2
     expand_tab = true
     project_rooter_patterns = ['.git/']
+    wildignore = '*/node_modules/*'
 
 
 # Enable autocomplete layer
