@@ -1,0 +1,198 @@
+{
+  "yaml.schemas": {
+    "file:///Users/mikaoelitiana/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "atlascode.jira.jqlList": [
+    {
+      "id": "721e327f-93be-4b33-980f-15379b8c4e9b",
+      "siteId": "8a59defd-da15-42ee-be58-ec225b371de1",
+      "name": "Current Katalog Sprint",
+      "query": "project = Katalog",
+      "enabled": true,
+      "monitor": true
+    },
+    {
+      "id": "52ebfdef-5659-4513-8efe-84efe9dea586",
+      "siteId": "8a59defd-da15-42ee-be58-ec225b371de1",
+      "name": "Assigned to me",
+      "query": "assignee = currentUser() AND statusCategory in (\"To Do\", \"In Progress\")",
+      "enabled": true,
+      "monitor": true
+    }
+  ],
+  "atlascode.bitbucket.enabled": false,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "editor.minimap.enabled": false,
+  "vim.visualstar": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.easymotion": true,
+  "vim.enableNeovim": true,
+  "vim.hlsearch": true,
+  "vim.smartRelativeLine": true,
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "editor.renderWhitespace": "all",
+  "editor.renderIndentGuides": true,
+  "editor.renderLineHighlight": "gutter",
+  "editor.trimAutoWhitespace": true,
+  "files.autoSave": "off",
+  "javascript.validate.enable": false,
+  "json.format.enable": false,
+  "html.format.enable": false,
+  "atlascode.jira.lastCreateSiteAndProject": {
+    "siteId": "8a59defd-da15-42ee-be58-ec225b371de1",
+    "projectKey": "KAT"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vim.sneak": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.autofetch": true,
+  "python.showStartPage": false,
+  "workbench.colorCustomizations": {},
+  "atlascode.jira.statusbar.showLogin": false,
+  "atlascode.jira.statusbar.showProduct": false,
+  "atlascode.jira.statusbar.showUser": false,
+  "atlascode.jira.startWorkBranchTemplate.customPrefixes": ["feature-", "bug-"],
+  "atlascode.jira.startWorkBranchTemplate.customTemplate": "{{{prefix}}}{{{issueKey}}}-{{{summary}}}",
+  "vim.leader": ",",
+  "python.formatting.autopep8Args": ["--aggressive"],
+  "extensions.ignoreRecommendations": false,
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/init.vim",
+  "editor.lineNumbers": "relative",
+  "gitlens.mode.active": "review",
+  "githubPullRequests.queries": [
+    {
+      "label": "Waiting For My Review",
+      "query": "is:open review-requested:${user}"
+    },
+    {
+      "label": "Assigned To Me",
+      "query": "is:open assignee:${user}"
+    },
+    {
+      "label": "Created By Me",
+      "query": "is:open author:${user}"
+    }
+  ],
+  "[go]": {
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "go.useLanguageServer": true,
+  "go.delveConfig": {
+    "dlvLoadConfig": {
+      "followPointers": true,
+      "maxVariableRecurse": 5,
+      "maxStringLen": 64,
+      "maxArrayValues": 64,
+      "maxStructFields": -1
+    },
+    "apiVersion": 2,
+    "showGlobalVariables": false
+  },
+  "githubIssues.assignWhenWorking": false,
+  "githubIssues.issueCompletions.enabled": false,
+  "githubPullRequests.logLevel": "off",
+  "githubPullRequests.remotes": ["upstream", "origin"],
+  "githubPullRequests.telemetry.enabled": false,
+  "jest.autoEnable": false,
+  "editor.tabSize": 2,
+  "diffEditor.renderSideBySide": true,
+  "sonarlint.connectedMode.connections.sonarcloud": [
+    {
+      "organizationKey": "alkemics",
+      "connectionId": "alkemics",
+      "token": "a40acc213570e8ac7e6ddb26f3779e5f48fb5725"
+    }
+  ],
+  "diffEditor.ignoreTrimWhitespace": false,
+  "gitlens.advanced.fileHistoryShowAllBranches": true,
+  "jest.enableInlineErrorMessages": true,
+  "jest.debugMode": true,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "githubPullRequests.fileListLayout": "flat",
+  "go.toolsManagement.autoUpdate": true,
+  "jest.restartJestOnSnapshotUpdate": true,
+  "sonarlint.trace.server": "off",
+  "sonarlint.disableTelemetry": true,
+  "editor.fontSize": 11,
+  "workbench.colorTheme": "One Dark Pro",
+  "vim.neovimUseConfigFile": true,
+  "vim.replaceWithRegister": true,
+  "vim.showMarksInGutter": true,
+  "vim.useSystemClipboard": true,
+  "redhat.telemetry.enabled": false,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-h>"],
+      "after": ["<C-w>", "h"]
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["<C-w>", "l"]
+    },
+    {
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
+    },
+    {
+      "before": [","],
+      "commands": [
+        "vspacecode.space",
+        {
+          "command": "whichkey.triggerKey",
+          "args": "m"
+        }
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
+    },
+    {
+      "before": [","],
+      "commands": [
+        "vspacecode.space",
+        {
+          "command": "whichkey.triggerKey",
+          "args": "m"
+        }
+      ]
+    }
+  ],
+  "magit.forge-enabled": true,
+  "magit.quick-switch-enabled": true,
+  "scm.countBadge": "off",
+  "search.actionsPosition": "auto",
+  "search.mode": "reuseEditor",
+  "search.useGlobalIgnoreFiles": true,
+  "workbench.startupEditor": "none",
+  "search.seedOnFocus": true,
+  "search.showLineNumbers": true,
+  "whichkey.sortOrder": "nonNumberFirst",
+  "vim.debug.silent": true,
+  "vim.easymotionMarkerBackgroundColor": "#000000",
+  "vim.statusBarColors.insert": "#5f0000",
+  "search.quickOpen.history.filterSortOrder": "recency",
+  "search.quickOpen.includeSymbols": true,
+  "search.searchEditor.reusePriorSearchConfiguration": true,
+  "search.smartCase": true
+}
