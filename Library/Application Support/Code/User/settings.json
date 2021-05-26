@@ -1,6 +1,7 @@
 {
   "yaml.schemas": {
     "file:///Users/mika/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///Users/mikaoelitiana/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "atlascode.jira.jqlList": [
     {
@@ -126,6 +127,8 @@
   "go.toolsManagement.autoUpdate": true,
   "sonarlint.trace.server": "off",
   "sonarlint.pathToNodeExecutable": "/Users/mika/.nvm/versions/node/v14.15.1/bin/node",
+  "jest.restartJestOnSnapshotUpdate": true,
+  "sonarlint.trace.server": "off",
   "sonarlint.disableTelemetry": true,
   "editor.fontSize": 11,
   "workbench.colorTheme": "One Dark Pro",
@@ -185,4 +188,8 @@
     }
   ],
   "magit.display-buffer-function": "same-column"
+  "search.quickOpen.history.filterSortOrder": "recency",
+  "search.quickOpen.includeSymbols": true,
+  "search.searchEditor.reusePriorSearchConfiguration": true,
+  "search.smartCase": true
 }

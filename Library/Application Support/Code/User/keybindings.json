@@ -263,10 +263,5 @@
     "key": "enter",
     "command": "editor.action.nextMatchFindAction",
     "when": "editorFocus && findInputFocussed && inSearchEditor"
-  },
-  {
-    "key": "enter",
-    "command": "-editor.action.nextMatchFindAction",
-    "when": "editorFocus && findInputFocussed"
   }
 ]
