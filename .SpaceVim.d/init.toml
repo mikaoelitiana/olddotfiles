@@ -28,6 +28,7 @@
     # Enable vim compatible mode, avoid changing origin vim key bindings
     vimcompatible = true
     enable_vimfiler_gitstatus = true
+    filemanager = "defx"
     filetree_direction = "left"
     default_indent = 2
     expand_tab = true
@@ -50,7 +51,9 @@ default_height = 30
 name = "lang#typescript"
 
 [[layers]]
-name = "git"
+  name = "git"
+  git_plugin = 'fugitive'
+
 
 [[layers]]
 name = "denite"
