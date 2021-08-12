@@ -1,0 +1,36 @@
+#!/bin/zsh
+
+############################### FOLDER ICONS ###################################
+
+folder="$(pwd)"
+
+# Strip the path and leave the folder name
+folder_name="$(basename $folder)"
+
+# Construct the session name
+SESSION="$folder_name"
+
+while getopts ":c:" opt; do
+  case $opt in
+    c) c="$OPTARG"
+    ;;
+  esac
+done
+
+# Attach to Tmux
+if [ -z "$TMUX" ]; then
+    # We're not inside Tmux
+    echo "Attaching to $SESSION"
+    echo "Args: $c"
+    tmux attach-session -d -t "$SESSION" || tmux new-session -s "$SESSION" "$c"
+else
+    # We're inside Tmux
+    if [ -z "$(tmux ls | grep $SESSION)" ]; then
+        # Create a new dettached session
+        tmux new -s "$SESSION" -d "\"$c\""
+    fi
+
+    # Switch to the session
+    tmux switch-client -t "$SESSION"
+
+fi
