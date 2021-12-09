@@ -133,6 +133,7 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/Library/Python/2.7/bin
+export PATH=$PATH:$HOME/flutter/bin
 
 export ALK_PYPI_USERNAME=alkemics
 export ALK_PYPI_PASSWORD=cie2Rie7
@@ -152,3 +153,10 @@ export PATH="/usr/local/Cellar/icu4c/54.1/bin/:$PATH"
 # eval "$(pyenv init -)"
 
 export DEMO_APP_URL=http://127.0.0.1:8000/
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export REACT_EDITOR=code
