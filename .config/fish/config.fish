@@ -8,3 +8,4 @@ source $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish
 # config
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+set -gx EDITOR nvim
