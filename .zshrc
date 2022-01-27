@@ -1,7 +1,13 @@
+# Load ASDF
+. /usr/local/opt/asdf/libexec/asdf.sh
+
+if [ "x${VSCODE}" = "xYES" ]; then
+  # avoid slow load
+else
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-POWERLEVEL9K_INSTANT_PROMPT=quiet
+# POWERLEVEL9K_INSTANT_PROMPT=quiet
 GITSTATUS_LOG_LEVEL=DEBUG
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -74,23 +80,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-	git
-	ansible
-	brew
-	docker
-	docker-compose
-	golang
-  tmuxinator
-  mix
-)
-
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -132,6 +121,7 @@ export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/Library/Python/2.7/bin
 export PATH=$PATH:$HOME/flutter/bin
 
@@ -139,20 +129,18 @@ export ALK_PYPI_USERNAME=alkemics
 export ALK_PYPI_PASSWORD=cie2Rie7
 export ALK_PYPI_REPO=pypi.alkemics.com:8443
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export DD_TRACE_STARTUP_LOGS=0
 export PKG_CONFIG_PATH="/usr/local/Cellar/icu4c/54.1/lib/pkgconfig/:$PKG_CONFIG_PATH"
 export PATH="/usr/local/Cellar/icu4c/54.1/bin/:$PATH"
-
 # Load pyenv automatically by appending
 # export PYENV_ROOT="$HOME/.pyenv"
 # export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
 
-export DEMO_APP_URL=http://127.0.0.1:8000/
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -160,3 +148,19 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export REACT_EDITOR=code
+
+export jest_workers="10%"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  brew
+	git
+  tmuxinator
+)
+source $ZSH/oh-my-zsh.sh
+fi
+

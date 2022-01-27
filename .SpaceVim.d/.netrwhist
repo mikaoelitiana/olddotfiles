@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/usr/local/etc/nginx'
+let g:netrw_dirhist_2='/usr/local/etc/nginx/servers'
+let g:netrw_dirhist_1='/usr/local/etc/nginx'
+let g:netrw_dirhist_0='/usr/local/etc'
+let g:netrw_dirhist_9='/usr/local/etc/nginx/servers'
+let g:netrw_dirhist_8='/usr/local/etc/nginx'
+let g:netrw_dirhist_7='/usr/local/etc'
+let g:netrw_dirhist_6='/Users/mika/Workspace/front-productstream'
+let g:netrw_dirhist_5='/Users/mika/Workspace/codemod/sync-to-async'
+let g:netrw_dirhist_4='/Users/mika/Workspace/codemod'
