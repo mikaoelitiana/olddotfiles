@@ -3,7 +3,7 @@ if status is-interactive
 end
 
 # enable ASDF
-source $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish
+source (brew --prefix asdf)/libexec/asdf.fish
 
 # config
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
