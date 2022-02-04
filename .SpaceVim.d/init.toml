@@ -57,6 +57,7 @@ name = "lang#typescript"
   name = "VersionControl"
 [[layers]]
   name = "debug"
+  debugger_plugin = "vimspector"
 [[layers]]
   name = "github"
 [[layers]]
@@ -78,3 +79,12 @@ name = "lang#typescript"
   name = "lang#sh"
 [[layers]]
   name = "lang#toml"
+[[layers]]
+  name = "lang#rust"
+  filetypes = [
+    "rust"
+  ]
+  [layers.override_cmd]
+    rust = ["rls"]
+[[layers]]
+  name = "lsp"
