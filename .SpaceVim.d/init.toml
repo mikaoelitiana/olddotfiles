@@ -75,6 +75,8 @@ name = "lang#typescript"
   name = "test"
 [[layers]]
   name = "checkers"
+  lint_on_the_fly = true
+  lint_on_save = true
 [[layers]]
   name = "lang#sh"
 [[layers]]
