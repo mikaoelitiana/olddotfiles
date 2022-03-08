@@ -9,6 +9,10 @@ function! myspacevim#before() abort
     " display file path
     let g:spacevim_enable_statusline_bfpath = 1
     set shell=fish
+    " volta not runnign well https://github.com/volta-cli/volta/issues/866
+    if executable('volta')
+      let g:node_host_prog = trim(system("volta which neovim-node-host"))
+    endif
 endfunction
 
 function! myspacevim#after() abort

@@ -11,8 +11,8 @@
 # set spacevim theme. by default colorscheme layer is not loaded,
     # if you want to use more colorscheme, please load the colorscheme
     # layer
-    colorscheme = "one"
-    colorscheme_bg = "dark"
+    colorscheme = "molokai"
+    # colorscheme_bg = "dark"
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
     enable_guicolors = true
@@ -47,12 +47,13 @@
   default_position = 'top'
   default_height = 30
 [[layers]]
-name = "lang#typescript"
+  name = "lang#typescript"
 [[layers]]
   name = "git"
-  git_plugin = 'gina'
+  # git_plugin = 'gina'
+  git_plugin = 'neogit'
 [[layers]]
-  name = "denite"
+  name = "fzf"
 [[layers]]
   name = "VersionControl"
 [[layers]]
@@ -69,8 +70,8 @@ name = "lang#typescript"
   enabled_linters = ['flake8']
 [[layers]]
   name = "colorscheme"
-[[layers]]
-  name = "fzf"
+# [[layers]]
+  # name = "fzf"
 [[layers]]
   name = "test"
 [[layers]]
@@ -90,3 +91,11 @@ name = "lang#typescript"
     rust = ["rls"]
 [[layers]]
   name = "lsp"
+[[custom_plugins]]
+  repo = "justinmk/vim-sneak"
+[[custom_plugins]]
+  repo ="liuchengxu/space-vim-theme"
+[[custom_plugins]]
+  repo = "TimUntersberger/neogit"
+[[custom_plugins]]
+  repo = "nvim-lua/plenary.nvim"
