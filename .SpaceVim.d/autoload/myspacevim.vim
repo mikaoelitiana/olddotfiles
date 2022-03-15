@@ -13,6 +13,8 @@ function! myspacevim#before() abort
     if executable('volta')
       let g:node_host_prog = trim(system("volta which neovim-node-host"))
     endif
+    " neogit custon binding
+    call SpaceVim#custom#SPC('nore', ['g', 'n'], 'Neogit', 'Neogit', 1)
 endfunction
 
 function! myspacevim#after() abort
