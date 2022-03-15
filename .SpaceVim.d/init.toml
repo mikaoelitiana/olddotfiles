@@ -70,10 +70,11 @@
   enabled_linters = ['flake8']
 [[layers]]
   name = "colorscheme"
-# [[layers]]
-  # name = "fzf"
 [[layers]]
   name = "test"
+  use_ultest = true
+  [layers.override_config]
+    python_runner = 'nose'
 [[layers]]
   name = "checkers"
   lint_on_the_fly = true
