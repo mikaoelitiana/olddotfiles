@@ -36,12 +36,18 @@
     wildignore = '*/node_modules/*'
     bootstrap_before = 'myspacevim#before'
     bootstrap_after = 'myspacevim#after'
+    file_searching_tools = ['find', 'find -not -iwholename "*.git*" ']
+
 
 # Enable autocomplete layer
 [[layers]]
   name = 'autocomplete'
   auto_completion_return_key_behavior = "complete"
   auto_completion_tab_key_behavior = "cycle"
+[[layers]]
+    name = 'core'
+    filetree_show_hidden = true
+    enable_smooth_scrolling = true
 [[layers]]
   name = 'shell'
   default_position = 'top'
@@ -50,7 +56,6 @@
   name = "lang#typescript"
 [[layers]]
   name = "git"
-  # git_plugin = 'gina'
   git_plugin = 'neogit'
 [[layers]]
   name = "fzf"
@@ -74,11 +79,14 @@
   name = "test"
   use_ultest = true
   [layers.override_config]
-    python_runner = 'nose'
+    python_runner = 'pytest'
 [[layers]]
   name = "checkers"
   lint_on_the_fly = true
   lint_on_save = true
+[[layers]]
+  name = "format"
+  format_on_save = true
 [[layers]]
   name = "lang#sh"
 [[layers]]

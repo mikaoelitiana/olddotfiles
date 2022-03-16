@@ -13,9 +13,39 @@ function! myspacevim#before() abort
     if executable('volta')
       let g:node_host_prog = trim(system("volta which neovim-node-host"))
     endif
-    " neogit custon binding
+    " neogit configuration
     call SpaceVim#custom#SPC('nore', ['g', 'n'], 'Neogit', 'Neogit', 1)
 endfunction
 
 function! myspacevim#after() abort
+    lua << EOF
+    local neogit = require('neogit') 
+    neogit.setup {
+      disable_commit_confirmation = true,
+      kind = 'split',
+      sections = {
+        untracked = {
+          folded = true
+        },
+        unstaged = {
+          folded = false
+        },
+        staged = {
+          folded = false
+        },
+        stashes = {
+          folded = true
+        },
+        unpulled = {
+          folded = true
+        },
+        unmerged = {
+          folded = false
+        },
+        recent = {
+          folded = true
+        },
+      }
+    }
+EOF
 endfunction
