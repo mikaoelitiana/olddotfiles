@@ -56,7 +56,7 @@
   name = "lang#typescript"
 [[layers]]
   name = "git"
-  git_plugin = 'neogit'
+  git_plugin = 'fugitive'
 [[layers]]
   name = "fzf"
 [[layers]]
