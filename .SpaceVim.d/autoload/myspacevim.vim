@@ -15,6 +15,9 @@ function! myspacevim#before() abort
     endif
     " neogit configuration
     call SpaceVim#custom#SPC('nore', ['g', 'n'], 'Neogit', 'Neogit', 1)
+    " Jest for javascript
+    let g:test#javascript#runner = 'jest'
+    let test#strategy = 'dispatch_background'
 endfunction
 
 function! myspacevim#after() abort
