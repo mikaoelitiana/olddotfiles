@@ -35,10 +35,10 @@
     default_indent = 2
     expand_tab = true
     project_rooter_patterns = ['.git/']
-    wildignore = '*/node_modules/*'
+    wildignore = "*/node_modules/*,*/coverage/*"
     bootstrap_before = 'myspacevim#before'
     bootstrap_after = 'myspacevim#after'
-    file_searching_tools = ['find', 'find -not -iwholename "*.git*" ']
+    # file_searching_tools = ['find', 'find -not -iwholename "*.git*" ']
     automatic_update = true
 
 
@@ -59,9 +59,9 @@
   name = "lang#typescript"
 [[layers]]
   name = "git"
-  git_plugin = 'fugitive'
+  git_plugin = 'gina'
 [[layers]]
-  name = "fzf"
+  name = "leaderf"
 [[layers]]
   name = "VersionControl"
 [[layers]]
@@ -105,8 +105,6 @@
   name = "lsp"
 [[custom_plugins]]
   repo = "justinmk/vim-sneak"
-[[custom_plugins]]
-  repo ="liuchengxu/space-vim-theme"
 [[custom_plugins]]
   repo = "TimUntersberger/neogit"
 [[custom_plugins]]

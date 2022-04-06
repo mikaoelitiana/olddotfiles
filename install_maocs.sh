@@ -14,6 +14,7 @@ npm i -g yarn
 echo "Installing neovim"
 brew install neovim
 npm i -g neovim
+brew install ripgrep
 
 echo "Installing powerline"
 brew install python
