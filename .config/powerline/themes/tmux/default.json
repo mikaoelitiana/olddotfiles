@@ -2,14 +2,11 @@
   "segments": {
     "right": [
       {
-        "function": "powerline.segments.common.sys.uptime",
-        "priority": 50
-      },
-      {
         "function": "powerline.segments.common.bat.battery",
         "priority": 50,
         "args": {
-          "gamify": true
+          "gamify": true,
+          "steps": 10
         }
       },
       {
