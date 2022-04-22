@@ -9,10 +9,10 @@ echo "Installing fish"
 brew install fish
 echo $(which fish) >> /etc/shells
 
-echo "Installing node via volta"
+echo "Installing NodeJs and tooling via volta"
 curl https://get.volta.sh | bash
 volta install node
-npm i -g yarn prettier eslint
+npm i -g yarn prettier eslint typescript-language-server 
 
 echo "Installing powerline"
 brew install python
