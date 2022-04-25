@@ -33,8 +33,3 @@ brew install tmuxinator
 
 echo "Installing docker"
 brew install --cask docker
-
-echo "Installing Go tooling"
-brew install go
-mkdir -p $HOME/go
-brew install dustinblackman/tap/gomodrun
