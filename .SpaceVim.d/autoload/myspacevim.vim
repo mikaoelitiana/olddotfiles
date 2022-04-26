@@ -18,6 +18,8 @@ function! myspacevim#before() abort
     " Jest for javascript
     let g:test#javascript#runner = 'jest'
     let test#strategy = 'dispatch_background'
+    let g:ultest_fail_sign = '✘'
+    let g:ultest_running_sign = '🔄'
     " search config
     set smartcase
     set ignorecase
