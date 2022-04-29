@@ -31,6 +31,7 @@ brew install gh
 echo "Installing tmux"
 brew install tmux
 brew install tmuxinator
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "Installing docker"
 brew install --cask docker
