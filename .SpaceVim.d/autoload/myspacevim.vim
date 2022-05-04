@@ -26,8 +26,6 @@ function! myspacevim#before() abort
     " search config
     set smartcase
     set ignorecase
-    " github
-    let g:github_dashboard = { 'username': 'mikaoelitiana', 'password': $GITHUB_TOKEN }
 endfunction
 
 function! myspacevim#after() abort
@@ -70,4 +68,6 @@ EOF
       \ 'try_node_exe': 1,
     \ }
     let g:neoformat_enabled_typescriptreact = ['prettier']
+    " github
+    let g:github_dashboard = { 'username': 'mikaoelitiana', 'password': $GITHUB_TOKEN }
 endfunction
