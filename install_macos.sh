@@ -24,6 +24,7 @@ npm i -g neovim
 brew install ripgrep
 curl -sLf https://spacevim.org/install.sh | bash
 pip3 install --user pynvim
+gem install neovim
 
 echo "Installing Git toolings"
 brew install gh

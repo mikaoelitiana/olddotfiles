@@ -26,6 +26,8 @@ function! myspacevim#before() abort
     " search config
     set smartcase
     set ignorecase
+    " github
+    let g:github_dashboard = { 'username': 'mikaoelitiana', 'password': $GITHUB_TOKEN }
 endfunction
 
 function! myspacevim#after() abort
