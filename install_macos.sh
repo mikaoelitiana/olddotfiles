@@ -12,7 +12,8 @@ echo $(which fish) >> /etc/shells
 echo "Installing NodeJs and tooling via volta"
 curl https://get.volta.sh | bash
 volta install node
-npm i -g yarn prettier eslint typescript-language-server 
+npm i -g yarn prettier eslint typescript-language-server
+yarn global add all-the-package-names
 
 echo "Installing powerline"
 brew install python

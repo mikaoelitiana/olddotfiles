@@ -34,7 +34,8 @@
     enable_vimfiler_gitstatus = true
     default_indent = 2
     expand_tab = true
-    project_rooter_patterns = ['.git/']
+    project_rooter_patterns = ['.git/', 'package.json']
+    project_rooter_outermost = false
     wildignore = "*/node_modules/*,*/coverage/*"
     bootstrap_before = 'myspacevim#before'
     bootstrap_after = 'myspacevim#after'
@@ -46,14 +47,16 @@
   name = 'autocomplete'
   auto_completion_return_key_behavior = "complete"
   auto_completion_tab_key_behavior = "cycle"
+  [option]
+    autocomplete_method = "nvim-cmp"
 [[layers]]
     name = 'core'
     filetree_show_hidden = true
     enable_smooth_scrolling = true
 [[layers]]
   name = 'shell'
-  default_position = 'top'
-  default_height = 30
+  default_position = 'bottom'
+  default_height = 20
 [[layers]]
   name = "lang#typescript"
 [[layers]]
@@ -93,6 +96,9 @@
 [[layers]]
   name = "lang#toml"
 [[layers]]
+  name = "lang#markdown"
+  enabled_formater = ["prettier"]
+[[layers]]
   name = "lang#rust"
   filetypes = [
     "rust"
@@ -118,3 +124,6 @@
   repo = "github/copilot.vim"
 [[custom_plugins]]
   repo = "APZelos/blamer.nvim"
+[[custom_plugins]]
+    repo = "https://github.com/hrsh7th/nvim-cmp.git"
+    merged = 0
