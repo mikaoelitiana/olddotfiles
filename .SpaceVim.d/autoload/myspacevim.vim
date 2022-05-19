@@ -26,6 +26,10 @@ function! myspacevim#before() abort
     " search config
     set smartcase
     set ignorecase
+    " code action mapping Shift+Option+Enter
+    nnoremap <silent> <M-CR> :lua vim.lsp.buf.code_action()<CR>
+    " open diagnostic floating window
+    nnoremap <silent> <M-D> :lua vim.diagnostic.open_float()<CR>
 endfunction
 
 function! myspacevim#after() abort

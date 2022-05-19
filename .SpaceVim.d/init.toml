@@ -39,7 +39,6 @@
     wildignore = "*/node_modules/*,*/coverage/*"
     bootstrap_before = 'myspacevim#before'
     bootstrap_after = 'myspacevim#after'
-    file_searching_tools = ['find', 'find -not -iwholename "*.git*" ']
     automatic_update = true
 
 # Enable autocomplete layer
@@ -62,8 +61,6 @@
 [[layers]]
   name = "git"
   git_plugin = 'fugitive'
-[[layers]]
-  name = "leaderf"
 [[layers]]
   name = "VersionControl"
 [[layers]]
@@ -114,6 +111,8 @@
     "typescriptreact",
   ]
   enabled_clients = ['tsserver']
+[[layers]]
+  name = "telescope"
 [[custom_plugins]]
   repo = "justinmk/vim-sneak"
 [[custom_plugins]]
