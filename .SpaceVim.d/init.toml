@@ -40,14 +40,14 @@
     bootstrap_before = 'myspacevim#before'
     bootstrap_after = 'myspacevim#after'
     automatic_update = true
+    lint_engine = "ale"
+    autocomplete_method = "coc"
 
 # Enable autocomplete layer
 [[layers]]
   name = 'autocomplete'
   auto_completion_return_key_behavior = "complete"
   auto_completion_tab_key_behavior = "cycle"
-  [option]
-    autocomplete_method = "nvim-cmp"
 [[layers]]
     name = 'core'
     filetree_show_hidden = true

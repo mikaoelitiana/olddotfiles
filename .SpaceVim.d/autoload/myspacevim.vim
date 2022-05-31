@@ -30,6 +30,8 @@ function! myspacevim#before() abort
     nnoremap <silent> <M-CR> :lua vim.lsp.buf.code_action()<CR>
     " open diagnostic floating window
     nnoremap <silent> <M-D> :lua vim.diagnostic.open_float()<CR>
+    " COC
+    let g:coc_global_extensions = ['coc-eslint', 'coc-tsserver']
 endfunction
 
 function! myspacevim#after() abort
