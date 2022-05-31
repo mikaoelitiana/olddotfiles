@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 echo "Installing brew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.profile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo "Installing kitty"
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
@@ -17,7 +19,7 @@ yarn global add all-the-package-names
 
 echo "Installing powerline"
 brew install python
-python -m pip install --user powerline-status
+python3 -m pip install powerline-status
 
 echo "Installing neovim + spacevim"
 brew install neovim
