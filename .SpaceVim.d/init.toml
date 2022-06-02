@@ -13,13 +13,14 @@
     # layer
     colorscheme = "one"
     colorscheme_bg = "dark"
+    guifont = "SauceCodePro Nerd Font Mono:h11"
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
     enable_guicolors = true
     # Disable statusline separator, if you want to use other value, please
     # install nerd fonts
-    statusline_separator = "arrow"
-    statusline_iseparator = "arrow"
+    statusline_separator = "nil"
+    statusline_iseparator = "nil"
     buffer_index_type = 4
     windows_index_type = 3
     windows_leader = ","
@@ -52,6 +53,9 @@
     name = 'core'
     filetree_show_hidden = true
     enable_smooth_scrolling = true
+[[layers]]
+   name = 'core#statusline'
+   enable = false
 [[layers]]
   name = 'shell'
   default_position = 'bottom'
