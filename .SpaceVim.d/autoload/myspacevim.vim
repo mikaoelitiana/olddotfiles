@@ -32,6 +32,8 @@ function! myspacevim#before() abort
     nnoremap <silent> <M-D> :lua vim.diagnostic.open_float()<CR>
     " COC
     let g:coc_global_extensions = ['coc-eslint', 'coc-tsserver']
+    " yank to clipboard
+    set clipboard+=unnamedplus
 endfunction
 
 function! myspacevim#after() abort
