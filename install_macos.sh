@@ -31,6 +31,7 @@ gem install neovim
 
 echo "Installing Git toolings"
 brew install gh
+brew install jesseduffield/lazygit/lazygit
 
 echo "Installing tmux"
 brew install tmux

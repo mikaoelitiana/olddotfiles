@@ -16,8 +16,9 @@ function! myspacevim#before() abort
     if executable('volta')
       let g:node_host_prog = trim(system("volta which neovim-node-host"))
     endif
-    " neogit configuration
-    call SpaceVim#custom#SPC('nore', ['g', 'n'], 'Neogit', 'Neogit', 1)
+    " lazygit config
+    call SpaceVim#custom#SPC('nore', ['g', 'l'], 'FloatermNew lazygit', 'LazyGit', 1)
+    call SpaceVim#custom#SPC('nore', ['g', 'h', 'c'], 'FloatermNew gh pr create', 'gh pr create', 1)
     " Jest for javascript
     let g:test#javascript#runner = 'jest'
     let test#strategy = 'dispatch_background'
@@ -34,40 +35,13 @@ function! myspacevim#before() abort
     let g:coc_global_extensions = ['coc-eslint', 'coc-tsserver']
     " yank to clipboard
     set clipboard+=unnamedplus
+    " floatterm plugin config
+    let g:floaterm_width = 0.9
+    let g:floaterm_height = 0.9
+    let g:floaterm_autoclose = true
 endfunction
 
 function! myspacevim#after() abort
-    lua << EOF
-    local neogit = require('neogit')
-    neogit.setup {
-      disable_commit_confirmation = true,
-      kind = 'split',
-      sections = {
-        untracked = {
-          folded = true
-        },
-        unstaged = {
-          folded = false
-        },
-        staged = {
-          folded = false
-        },
-        stashes = {
-          folded = true
-        },
-        unpulled = {
-          folded = true
-        },
-        unmerged = {
-          folded = false
-          },
-        recent = {
-          folded = true
-        },
-      }
-    }
-EOF
-
     " typescript react prettier config
     let g:neoformat_typescriptreact_prettier = {
       \ 'exe': 'node_modules/.bin/prettier',
@@ -78,4 +52,9 @@ EOF
     let g:neoformat_enabled_typescriptreact = ['prettier']
     " github
     let g:github_dashboard = { 'username': 'mikaoelitiana', 'password': $GITHUB_TOKEN }
+
 endfunction
+
+function! SpaceVim#layers#core#statusline#get(...) abort
+endfunction
+
