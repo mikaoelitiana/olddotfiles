@@ -38,7 +38,7 @@ function! myspacevim#before() abort
     " floatterm plugin config
     let g:floaterm_width = 0.9
     let g:floaterm_height = 0.9
-    let g:floaterm_autoclose = true
+    let g:floaterm_autoclose = 1
 endfunction
 
 function! myspacevim#after() abort
