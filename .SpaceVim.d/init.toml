@@ -128,3 +128,9 @@
   merged = 0
 [[custom_plugins]]
   name = "voldikss/vim-floaterm"
+[[custom_plugins]]
+  name = "hashivim/vim-terraform"
+[[custom_plugins]]
+  name = "juliosueiras/vim-terraform-completion"
+[[custom_plugins]]
+  name = "vim-syntastic/syntastic"
