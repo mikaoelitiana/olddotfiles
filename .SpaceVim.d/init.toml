@@ -62,7 +62,6 @@
   name = "lang#typescript"
 [[layers]]
   name = "git"
-  git_plugin = 'fugitive'
 [[layers]]
   name = "VersionControl"
 [[layers]]
