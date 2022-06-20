@@ -19,8 +19,6 @@ function! myspacevim#before() abort
     " lazygit config
     call SpaceVim#custom#SPC('nore', ['g', 'l'], 'FloatermNew lazygit', 'LazyGit', 1)
     call SpaceVim#custom#SPC('nore', ['g', 'h', 'c'], 'FloatermNew gh pr create', 'gh pr create', 1)
-    " Jest for javascript
-    let g:test#javascript#runner = 'jest'
     let test#strategy = 'dispatch_background'
     let g:ultest_fail_sign = '✘'
     let g:ultest_running_sign = '🔄'
@@ -39,6 +37,9 @@ function! myspacevim#before() abort
     let g:floaterm_width = 0.9
     let g:floaterm_height = 0.9
     let g:floaterm_autoclose = 1
+    " set wrap to soft
+    set wrap 
+    set linebreak
 endfunction
 
 function! myspacevim#after() abort
