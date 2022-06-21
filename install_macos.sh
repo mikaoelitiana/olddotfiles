@@ -40,3 +40,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "Installing docker"
 brew install --cask docker
+
+echo "Installing asdf"
+brew install asdf
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf install nodejs latest
+

@@ -11,3 +11,7 @@ if test -e /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.
 end
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
+
+if test -d /opt/homebrew/opt/asdf/libexec/asdf.fish
+    source /opt/homebrew/opt/asdf/libexec/asdf.fish
+end
