@@ -11,9 +11,11 @@ echo "Installing fish"
 brew install fish
 echo $(which fish) >> /etc/shells
 
-echo "Installing NodeJs and tooling via volta"
-curl https://get.volta.sh | bash
-volta install node
+echo "Installing NodeJs and tooling via asdf"
+brew install asdf gpg gawk
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf install nodejs latest
+asdf global nodejs latest
 npm i -g yarn prettier eslint typescript-language-server
 yarn global add all-the-package-names
 
@@ -24,7 +26,7 @@ python3 -m pip install powerline-status
 echo "Installing neovim + spacevim"
 brew install neovim
 npm i -g neovim
-brew install ripgrep
+brew install ripgrep xclip
 curl -sLf https://spacevim.org/install.sh | bash
 pip3 install --user pynvim
 gem install neovim
@@ -41,8 +43,5 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "Installing docker"
 brew install --cask docker
 
-echo "Installing asdf"
-brew install asdf
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf install nodejs latest
+echo "Please download Unifont from https://www.fontspace.com/unifont-font-f26370"
 

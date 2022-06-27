@@ -40,6 +40,7 @@
     bootstrap_after = 'myspacevim#after'
     automatic_update = true
     lint_engine = "ale"
+    disabled_plugins = ["nvim-lspconfig"]
     autocomplete_method = "coc"
 
 # Enable autocomplete layer
@@ -80,7 +81,6 @@
   name = "colorscheme"
 [[layers]]
   name = "test"
-  use_ultest = true
   [layers.override_config]
     python_runner = 'pytest'
     strategy = "dispatch"
@@ -133,3 +133,16 @@
   name = "juliosueiras/vim-terraform-completion"
 [[custom_plugins]]
   name = "vim-syntastic/syntastic"
+[[custom_plugins]]
+  name = "nvim-treesitter/nvim-treesitter"
+  hook_post_update = "TSUpdate"
+[[custom_plugins]]
+  name = "antoinemadec/FixCursorHold.nvim"
+[[custom_plugins]]
+  name = "nvim-neotest/neotest"
+[[custom_plugins]]
+  name = "haydenmeade/neotest-jest"
+[[custom_plugins]]
+  name = "nvim-neotest/neotest-vim-test"
+[[custom_plugins]]
+  name = 'neovim/nvim-lspconfig'
