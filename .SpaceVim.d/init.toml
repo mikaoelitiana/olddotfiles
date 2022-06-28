@@ -105,8 +105,6 @@
 [[custom_plugins]]
   repo = "nvim-lua/plenary.nvim"
 [[custom_plugins]]
-  repo = "github/copilot.vim"
-[[custom_plugins]]
   repo = "APZelos/blamer.nvim"
 [[custom_plugins]]
   repo = "https://github.com/hrsh7th/nvim-cmp.git"
