@@ -16,7 +16,7 @@ brew install asdf gpg gawk
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf install nodejs latest
 asdf global nodejs latest
-npm i -g yarn prettier eslint typescript-language-server
+npm i -g yarn prettier eslint typescript-language-server eslint_d
 yarn global add all-the-package-names
 
 echo "Installing powerline"

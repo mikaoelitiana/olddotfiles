@@ -1,3 +1,13 @@
 os:
   editCommand: 'nvim'
   editCommandTemplate: '{{editor}} +{{line}} -- {{filename}}'
+gui:
+  theme:
+    lightTheme: true
+    activeBorderColor:
+      - black
+      - bold
+    inactiveBorderColor:
+      - black
+    selectedLineBgColor:
+      - default
