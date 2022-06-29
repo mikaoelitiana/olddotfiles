@@ -45,9 +45,6 @@
     auto_completion_return_key_behavior = "complete"
     auto_completion_tab_key_behavior = "cycle"
 
-# Enable autocomplete layer
-#[[layers]]
-#  name = 'autocomplete'
 [[layers]]
     name = 'core'
     filetree_show_hidden = true
@@ -59,8 +56,6 @@
   name = 'shell'
   default_position = 'bottom'
   default_height = 20
-[[layers]]
-  name = "lang#typescript"
 [[layers]]
   name = "git"
 [[layers]]
@@ -103,8 +98,6 @@
   ]
   [layers.override_cmd]
     rust = ["rls"]
-#[[layers]]
-#  name = "lsp"
 [[layers]]
   name = "telescope"
 [[custom_plugins]]

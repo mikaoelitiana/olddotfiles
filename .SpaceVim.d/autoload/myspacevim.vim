@@ -50,14 +50,7 @@ function! myspacevim#after() abort
     let g:neoformat_enabled_typescriptreact = ['prettier', 'prettier-eslint', 'eslint_d']
     " github
     let g:github_dashboard = { 'username': 'mikaoelitiana', 'password': $GITHUB_TOKEN }
-
-    " Automatically enter insert mode when entering neovim terminal buffer
-    augroup terminal_autoinsert
-      autocmd!
-      " autocmd BufWinEnter,WinEnter *  if &buftype == 'terminal' | startinsert | endif
-      " prevents neotest output to automatically switch to insert mode
-      autocmd TermOpen * if nvim_buf_get_name(0) =~# '^term://.*' | startinsert | endif
-    augroup END
+    
 
     " equivalent of init.lua
     lua << EOF
@@ -86,6 +79,23 @@ function! myspacevim#after() abort
     local lsp = require('lsp-zero')
     lsp.preset('recommended')
     lsp.setup()
+
+    -- Automatically enter insert mode when entering neovim terminal buffer
+    -- For neotest floating window, stopinsert
+    vim.api.nvim_create_autocmd("TermOpen", {
+      desc = "Auto enter insert mode when opening a terminal",
+      pattern = "*",
+      callback = function()
+        -- Wait briefly just in case we immediately switch out of the buffer
+        vim.defer_fn(function()
+          if vim.api.nvim_buf_get_option(0, 'buftype') == 'terminal' then
+            vim.cmd([[startinsert]])
+          else
+            vim.cmd([[stopinsert]])
+          end
+        end, 100)
+      end,
+    })
 EOF
 endfunction
 
