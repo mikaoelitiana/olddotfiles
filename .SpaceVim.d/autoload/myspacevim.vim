@@ -25,8 +25,6 @@ function! myspacevim#before() abort
     nnoremap <silent> <M-CR> :lua vim.lsp.buf.code_action()<CR>
     " open diagnostic floating window
     nnoremap <silent> <M-D> :lua vim.diagnostic.open_float()<CR>
-    " COC
-    let g:coc_global_extensions = ['coc-eslint', 'coc-tsserver']
     " yank to clipboard
     set clipboard+=unnamedplus
     " floatterm plugin config
@@ -36,6 +34,8 @@ function! myspacevim#before() abort
     " set wrap to soft
     set wrap 
     set linebreak
+    " nvim-cmp 
+    inoremap <C-x><C-o> <Cmd>lua require('cmp').complete()<CR>
 endfunction
 
 function! myspacevim#after() abort
@@ -83,12 +83,14 @@ function! myspacevim#after() abort
       }
     })
 
+    local lsp = require('lsp-zero')
+    lsp.preset('recommended')
+    lsp.setup()
 EOF
 endfunction
 
 function! SpaceVim#layers#core#statusline#get(...) abort
 endfunction
-
 
 function! SpaceVim#layers#test#config() abort
   let g:_spacevim_mappings_space.k = get(g:_spacevim_mappings_space, 'k',  {'name' : '+Test'})

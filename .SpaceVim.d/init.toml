@@ -40,14 +40,14 @@
     bootstrap_after = 'myspacevim#after'
     automatic_update = true
     lint_engine = "ale"
-    # disabled_plugins = ["nvim-lspconfig"]
-    autocomplete_method = "coc"
+    disabled_plugins = ["nvim-lspconfig", "cmp-buffer"]
+    autocomplete_method = "nvim-cmp"
+    auto_completion_return_key_behavior = "complete"
+    auto_completion_tab_key_behavior = "cycle"
 
 # Enable autocomplete layer
-[[layers]]
-  name = 'autocomplete'
-  auto_completion_return_key_behavior = "complete"
-  auto_completion_tab_key_behavior = "cycle"
+#[[layers]]
+#  name = 'autocomplete'
 [[layers]]
     name = 'core'
     filetree_show_hidden = true
@@ -103,15 +103,8 @@
   ]
   [layers.override_cmd]
     rust = ["rls"]
-[[layers]]
-  name = "lsp"
-  filetypes = [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-  ]
-  enabled_clients = ['tsserver']
+#[[layers]]
+#  name = "lsp"
 [[layers]]
   name = "telescope"
 [[custom_plugins]]
@@ -144,3 +137,29 @@
   name = "haydenmeade/neotest-jest"
 [[custom_plugins]]
   name = "nvim-neotest/neotest-vim-test"
+[[custom_plugins]]
+  name = "neovim/nvim-lspconfig"
+[[custom_plugins]]
+  name = "VonHeikemen/lsp-zero.nvim"
+[[custom_plugins]]
+  name = "L3MON4D3/LuaSnip"
+[[custom_plugins]]
+  name = "rafamadriz/friendly-snippets"
+[[custom_plugins]]
+  name = 'williamboman/nvim-lsp-installer'
+[[custom_plugins]]
+  name = 'hrsh7th/nvim-cmp'
+[[custom_plugins]]
+  name = 'hrsh7th/cmp-buffer'
+[[custom_plugins]]
+  name = 'hrsh7th/cmp-path'
+[[custom_plugins]]
+  name = 'saadparwaiz1/cmp_luasnip'
+[[custom_plugins]]
+  name = 'hrsh7th/cmp-nvim-lsp'
+[[custom_plugins]]
+  name = 'hrsh7th/cmp-nvim-lua'
+[[custom_plugins]]
+  name = 'rafamadriz/friendly-snippets'
+[[custom_plugins]]
+  name = 'neovim/nvim-lspconfig'
