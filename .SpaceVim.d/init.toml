@@ -100,6 +100,8 @@
     rust = ["rls"]
 [[layers]]
   name = "telescope"
+[[layers]]
+  name = "lang#graphql"
 [[custom_plugins]]
   repo = "justinmk/vim-sneak"
 [[custom_plugins]]
