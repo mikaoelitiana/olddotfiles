@@ -101,12 +101,12 @@
     rust = ["rls"]
 [[layers]]
   name = "telescope"
+[[layers]]
+  name = "lang#graphql"
 [[custom_plugins]]
   repo = "justinmk/vim-sneak"
 [[custom_plugins]]
   repo = "nvim-lua/plenary.nvim"
-[[custom_plugins]]
-  repo = "github/copilot.vim"
 [[custom_plugins]]
   repo = "APZelos/blamer.nvim"
 [[custom_plugins]]
