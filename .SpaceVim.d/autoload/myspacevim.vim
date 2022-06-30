@@ -1,3 +1,5 @@
+let s:WIN = SpaceVim#api#import('vim#window')
+
 function! myspacevim#before() abort
     " fix eslint issue https://github.com/neomake/neomake/issues/2340
     let g:eslint_exe = substitute(system('npm bin') ,'\n', '', 'g') . '/eslint'
@@ -9,15 +11,11 @@ function! myspacevim#before() abort
     let g:neomake_typescript_enabled_makers = ['eslint']
     let g:neomake_typescriptreact_enabled_makers = ['eslint']
     let g:neoformat_try_node_exe = 1
-    " display file path
-    let g:spacevim_enable_statusline_bfpath = 1
     " set shell=fish
     " lazygit config
-    call SpaceVim#custom#SPC('nore', ['g', 'l'], 'FloatermNew lazygit', 'LazyGit', 1)
+    call SpaceVim#custom#SPC('nore', ['g', 's'], 'FloatermNew lazygit', 'LazyGit', 1)
     call SpaceVim#custom#SPC('nore', ['g', 'h', 'c'], 'FloatermNew gh pr create', 'gh pr create', 1)
     let test#strategy = 'dispatch_background'
-    let g:ultest_fail_sign = '✘'
-    let g:ultest_running_sign = '🔄'
     " search config
     set smartcase
     set ignorecase
@@ -50,7 +48,15 @@ function! myspacevim#after() abort
     let g:neoformat_enabled_typescriptreact = ['prettier', 'prettier-eslint', 'eslint_d']
     " github
     let g:github_dashboard = { 'username': 'mikaoelitiana', 'password': $GITHUB_TOKEN }
-    
+
+    call airline#add_statusline_func('WindowNumber')
+    call airline#add_inactive_statusline_func('WindowNumber')
+
+    for i in range(1, 9)
+      exe "call SpaceVim#mapping#space#def('nnoremap', ["
+            \ . i . "], 'call JumpToWindow("
+            \ . i . ")', 'window-" . i . "', 1)"
+    endfor
 
     " equivalent of init.lua
     lua << EOF
@@ -100,6 +106,7 @@ EOF
 endfunction
 
 function! SpaceVim#layers#core#statusline#get(...) abort
+  return 0
 endfunction
 
 function! SpaceVim#layers#test#config() abort
@@ -119,4 +126,17 @@ function! SpaceVim#layers#test#config() abort
   call SpaceVim#mapping#space#def('nnoremap', ['k', 'o'], 'lua require("neotest").output.open({ enter = true })', 'show-output', 1)
   let g:test#custom_strategies = {'spacevim': function('SpaceVim#plugins#runner#open')}
   let g:test#strategy = 'spacevim'
+endfunction
+
+function! WindowNumber(...)
+    let builder = a:1
+    let context = a:2
+    call builder.add_section('airline_b', '%{tabpagewinnr(tabpagenr())}')
+    return 0
+endfunction
+
+function! JumpToWindow(i) abort
+  if s:WIN.win_count() >= a:i
+    exe a:i . 'wincmd w'
+  endif
 endfunction

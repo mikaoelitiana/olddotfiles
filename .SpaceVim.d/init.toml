@@ -19,7 +19,7 @@
     enable_guicolors = true
     # Disable statusline separator, if you want to use other value, please
     # install nerd fonts
-    statusline_separator = "nil"
+    statusline_separator = "arrow"
     statusline_iseparator = "nil"
     buffer_index_type = 4
     windows_index_type = 3
@@ -58,6 +58,7 @@
   default_height = 20
 [[layers]]
   name = "git"
+  git_plugin = 'fugitive'
 [[layers]]
   name = "VersionControl"
 [[layers]]
