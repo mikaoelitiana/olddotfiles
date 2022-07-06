@@ -34,6 +34,7 @@ function! myspacevim#before() abort
     set linebreak
     " nvim-cmp 
     inoremap <C-x><C-o> <Cmd>lua require('cmp').complete()<CR>
+
 endfunction
 
 function! myspacevim#after() abort
@@ -58,6 +59,10 @@ function! myspacevim#after() abort
             \ . i . ")', 'window-" . i . "', 1)"
     endfor
 
+    call SpaceVim#mapping#space#regesit_lang_mappings('typescript', function('s:set_lsp_mappings'))
+    call SpaceVim#mapping#space#regesit_lang_mappings('typescriptreact', function('s:set_lsp_mappings'))
+
+    " --------------------------------------------------------------------------------------- "
     " equivalent of init.lua
     lua << EOF
     require'nvim-treesitter.configs'.setup {
@@ -85,7 +90,6 @@ function! myspacevim#after() abort
     local lsp = require('lsp-zero')
     lsp.preset('recommended')
     lsp.setup()
-
     -- Automatically enter insert mode when entering neovim terminal buffer
     -- For neotest floating window, stopinsert
     vim.api.nvim_create_autocmd("TermOpen", {
@@ -114,6 +118,7 @@ function! SpaceVim#layers#test#config() abort
   call SpaceVim#mapping#space#def('nnoremap', ['k', 'n'], 'lua require("neotest").run.run()', 'nearest', 1)
   call SpaceVim#mapping#space#def('nnoremap', ['k', 'f'], 'lua require("neotest").run.run(vim.fn.expand("%"))', 'file', 1)
   call SpaceVim#mapping#space#def('nnoremap', ['k', 'l'], 'lua require("neotest").run.run_last()', 'last', 1)
+  call SpaceVim#mapping#space#def('nnoremap', ['k', 's'], 'lua require("neotest").run.run({ suite = true })', 'suite', 1)
   call SpaceVim#mapping#space#def('nnoremap', ['k', 'u'], 'lua require("neotest").summary.toggle()', 'jump-to-summary', 1)
   call SpaceVim#mapping#space#def('nnoremap', ['k', 'U'], 'lua require("neotest").summary.toggle()', 'open-summary', 1)
   call SpaceVim#mapping#space#def('nnoremap', ['k', 'k'], 'lua require("neotest").run.stop()', 'stop-nearest', 1)
@@ -140,3 +145,18 @@ function! JumpToWindow(i) abort
     exe a:i . 'wincmd w'
   endif
 endfunction
+
+function! s:set_lsp_mappings() abort
+  call SpaceVim#mapping#space#langSPC('nnoremap', ['l', 'd'], 'lua vim.diagnostic.open_float()', 'show-document', 1)
+  call SpaceVim#mapping#space#langSPC('nnoremap', ['l', 'e'], 'lua vim.lsp.buf.rename()', 'rename-symbol', 1)
+  call SpaceVim#mapping#space#langSPC('nnoremap', ['l', 'f'], 'lua vim.lsp.buf.code_action()', 'code fix', 1)
+  call SpaceVim#mapping#space#langSPC('nnoremap', ['l', 'p'], 'lua vim.lsp.buf.signature_help()', 'signature help', 1)
+  call SpaceVim#mapping#space#langSPC('nnoremap', ['l', 't'], 'lua vim.lsp.buf.type_definition()', 'view type', 1)
+  call SpaceVim#mapping#space#langSPC('nnoremap', ['l', 'R'], 'lua vim.lsp.buf.references()', 'show reference', 1)
+  call SpaceVim#mapping#space#langSPC('nnoremap', ['l', 'D'], 'lua vim.diagnostic.open_float()', 'show errors', 1)
+  call SpaceVim#mapping#space#langSPC('nnoremap', ['l', 'o'], 'lua vim.lsp.buf.formatting()', 'format', 1)
+endfunction
+
+function! s:on_typescript_ft() abort
+endfunction
+
