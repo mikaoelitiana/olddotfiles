@@ -92,6 +92,14 @@ function! myspacevim#after() abort
     local lsp = require('lsp-zero')
     lsp.preset('recommended')
     lsp.setup()
+
+    local signature_config = {
+      hint_enable = false,
+      handler_opts = { border = "single" },
+      max_width = 80,
+    }
+    require "lsp_signature".setup(signature_config)
+
     -- Automatically enter insert mode when entering neovim terminal buffer
     -- For neotest floating window, stopinsert
     vim.api.nvim_create_autocmd("TermOpen", {

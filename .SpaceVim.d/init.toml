@@ -157,3 +157,5 @@
   name = 'rafamadriz/friendly-snippets'
 [[custom_plugins]]
   name = 'neovim/nvim-lspconfig'
+[[custom_plugins]]
+  name = 'ray-x/lsp_signature.nvim'
