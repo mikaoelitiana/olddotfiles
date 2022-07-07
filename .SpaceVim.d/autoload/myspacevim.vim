@@ -69,7 +69,7 @@ function! myspacevim#after() abort
     lua << EOF
     require'nvim-treesitter.configs'.setup {
       -- A list of parser names, or "all"
-      ensure_installed = { "typescript", "javascript" },
+      ensure_installed = { "typescript", "tsx", "javascript" },
       -- Install parsers synchronously (only applied to `ensure_installed`)
       sync_install = false,
       highlight = {
@@ -77,12 +77,9 @@ function! myspacevim#after() abort
       },
     }
 
-    require("neotest.logging"):set_level("INFO")
     require("neotest").setup({
      adapters = {
-        -- require('neotest-jest')({
-        --  jestCommand = "npx jest --"
-        -- }),
+         require('neotest-jest')({}),
         require("neotest-vim-test")({
           ignore_file_types = { "javascript", "typescript" }
         })
