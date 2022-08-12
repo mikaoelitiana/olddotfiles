@@ -1,5 +1,6 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+    kubectl completion fish | source
 end
 
 set -gx EDITOR nvim
@@ -14,4 +15,6 @@ if test -e /opt/homebrew/opt/asdf/libexec/asdf.fish
     source /opt/homebrew/opt/asdf/libexec/asdf.fish
 end
 
-kubectl completion fish | source
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "/Users/mikaoelitiana/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
