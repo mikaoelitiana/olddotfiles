@@ -1,6 +1,8 @@
 let s:WIN = SpaceVim#api#import('vim#window')
 
 function! myspacevim#before() abort
+    let g:spacevim_project_auto_root = 0
+    let g:spacevim_project_rooter_outermost = 0
     " fix eslint issue https://github.com/neomake/neomake/issues/2340
     let g:eslint_exe = substitute(system('npm bin') ,'\n', '', 'g') . '/eslint'
     let g:neomake_eslint_exe = g:eslint_exe
@@ -15,7 +17,9 @@ function! myspacevim#before() abort
     " lazygit config
     call SpaceVim#custom#SPC('nore', ['g', 's'], 'FloatermNew lazygit', 'LazyGit', 1)
     call SpaceVim#custom#SPC('nore', ['g', 'h', 'c'], 'FloatermNew gh pr create', 'gh pr create', 1)
-    let test#strategy = 'dispatch_background'
+    let g:test#custom_strategies = {'spacevim': function('SpaceVim#plugins#runner#open')}
+    let g:test#strategy = 'spacevim'
+    let g:test#enabled_runners = ["javascript#mocha"]
     " search config
     set smartcase
     set ignorecase
@@ -34,7 +38,6 @@ function! myspacevim#before() abort
     set linebreak
     " nvim-cmp 
     inoremap <C-x><C-o> <Cmd>lua require('cmp').complete()<CR>
-
 endfunction
 
 function! myspacevim#after() abort
@@ -46,9 +49,9 @@ function! myspacevim#after() abort
       \ 'stdin': 1,
       \ 'try_node_exe': 1,
     \ }
-    let g:neoformat_enabled_javascript = ['prettier', 'prettiereslint', 'eslint_d']
-    let g:neoformat_enabled_typescript = ['prettier', 'prettiereslint', 'eslint_d']
-    let g:neoformat_enabled_typescriptreact = ['prettier', 'prettiereslint', 'eslint_d']
+    let g:neoformat_enabled_javascript = ['prettier_d',  'eslint_d']
+    let g:neoformat_enabled_typescript = ['prettier_d',  'eslint_d']
+    let g:neoformat_enabled_typescriptreact = ['prettier_d',  'eslint_d']
     " github
     let g:github_dashboard = { 'username': 'mikaoelitiana', 'password': $GITHUB_TOKEN }
 
@@ -67,6 +70,15 @@ function! myspacevim#after() abort
     " --------------------------------------------------------------------------------------- "
     " equivalent of init.lua
     lua << EOF
+    -- neotest
+    --require("neotest").setup({
+    -- adapters = {
+    --   -- require('neotest-jest')({}),
+    --   require("neotest-vim-test")({
+    --     --  ignore_file_types = { "javascript", "typescript" }
+    --    })
+    --  }
+    --})
     require'nvim-treesitter.configs'.setup {
       -- A list of parser names, or "all"
       ensure_installed = { "typescript", "tsx", "javascript" },
@@ -76,15 +88,6 @@ function! myspacevim#after() abort
         enable = true,
       },
     }
-
-    require("neotest").setup({
-     adapters = {
-         require('neotest-jest')({}),
-        require("neotest-vim-test")({
-          ignore_file_types = { "javascript", "typescript" }
-        })
-      }
-    })
 
     local lsp = require('lsp-zero')
     lsp.preset('recommended')
@@ -113,6 +116,8 @@ function! myspacevim#after() abort
         end, 100)
       end,
     })
+
+    -- require("luasnip.loaders.from_vscode").lazy_load({paths = "~/.config/snippets/"})
 EOF
 endfunction
 

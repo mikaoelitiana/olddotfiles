@@ -33,7 +33,7 @@
     filetree_direction = "left"
     default_indent = 2
     expand_tab = true
-    project_rooter_patterns = ['.git/', 'package.json']
+    project_rooter_patterns = ['package.json']
     project_rooter_outermost = false
     wildignore = "*/node_modules/*,*/coverage/*"
     bootstrap_before = 'myspacevim#before'
@@ -44,7 +44,6 @@
     autocomplete_method = "nvim-cmp"
     auto_completion_return_key_behavior = "complete"
     auto_completion_tab_key_behavior = "cycle"
-
 [[layers]]
     name = 'core'
     filetree_show_hidden = true
