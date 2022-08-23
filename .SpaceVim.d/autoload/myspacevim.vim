@@ -49,9 +49,9 @@ function! myspacevim#after() abort
       \ 'stdin': 1,
       \ 'try_node_exe': 1,
     \ }
-    let g:neoformat_enabled_javascript = ['prettier_d',  'eslint_d']
-    let g:neoformat_enabled_typescript = ['prettier_d',  'eslint_d']
-    let g:neoformat_enabled_typescriptreact = ['prettier_d',  'eslint_d']
+    " let g:neoformat_enabled_javascript = ['prettier-eslint', 'prettierd',  'eslint_d']
+    " let g:neoformat_enabled_typescript = ['prettier-eslint', 'prettierd',  'eslint_d']
+    " let g:neoformat_enabled_typescriptreact = ['prettier-eslint', 'prettierd',  'eslint_d']
     " github
     let g:github_dashboard = { 'username': 'mikaoelitiana', 'password': $GITHUB_TOKEN }
 
