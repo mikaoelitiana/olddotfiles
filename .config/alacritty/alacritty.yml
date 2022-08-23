@@ -1,7 +1,6 @@
 font:
   normal:
-    # family: "MesloLGS NF"
-    family: "SauceCodePro NF"
-    size: 14
+    family: "SauceCodePro Nerd Font"
+    size: 20
 window:
   startup_mode: Fullscreen

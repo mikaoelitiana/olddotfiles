@@ -43,5 +43,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "Installing docker"
 brew install --cask docker
 
+echo "Installing fonts"
+brew tap homebrew/cask-fonts &&
+brew install --cask font-sauce-code-pro-nerd-font
+
 echo "Please download Unifont from https://www.fontspace.com/unifont-font-f26370"
 
