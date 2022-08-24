@@ -1,0 +1,24 @@
+os:
+  editCommand: "nvim"
+  editCommandTemplate: "{{editor}} +{{line}} -- {{filename}}"
+gui:
+  theme:
+    lightTheme: false
+    activeBorderColor:
+      - green
+      - bold
+    inactiveBorderColor:
+      - white
+    optionsTextColor:
+      - blue
+    selectedLineBgColor:
+      - reverse
+    selectedRangeBgColor:
+      - reverse
+    cherryPickedCommitBgColor:
+      - cyan
+    cherryPickedCommitFgColor:
+      - blue
+    unstagedChangesColor:
+      - red
+  showIcons: true
