@@ -45,7 +45,7 @@ brew install --cask docker
 
 echo "Installing fonts"
 brew tap homebrew/cask-fonts &&
-brew install --cask font-sauce-code-pro-nerd-font
+brew install --cask font-agave-nerd-font
 
 echo "Please download Unifont from https://www.fontspace.com/unifont-font-f26370"
 
