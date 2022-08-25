@@ -13,7 +13,7 @@
     # layer
     colorscheme = "one"
     colorscheme_bg = "dark"
-    guifont = "agave Nerd Font:h13"
+    guifont = "mononoki Nerd Font:h13"
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
     enable_guicolors = true
