@@ -71,14 +71,14 @@ function! myspacevim#after() abort
     " equivalent of init.lua
     lua << EOF
     -- neotest
-    --require("neotest").setup({
-    -- adapters = {
-    --   -- require('neotest-jest')({}),
-    --   require("neotest-vim-test")({
-    --     --  ignore_file_types = { "javascript", "typescript" }
-    --    })
-    --  }
-    --})
+    require("neotest").setup({
+     adapters = {
+       -- require('neotest-jest')({}),
+       require("neotest-vim-test")({
+         --  ignore_file_types = { "javascript", "typescript" }
+        })
+      }
+    })
     require'nvim-treesitter.configs'.setup {
       -- A list of parser names, or "all"
       ensure_installed = { "typescript", "tsx", "javascript" },
