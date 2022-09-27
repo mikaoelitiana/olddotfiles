@@ -40,7 +40,7 @@
     bootstrap_after = 'myspacevim#after'
     automatic_update = true
     lint_engine = "ale"
-    disabled_plugins = ["nvim-lspconfig", "cmp-buffer"]
+    disabled_plugins = ["nvim-lspconfig", "cmp-buffer", "neoformat"]
     autocomplete_method = "nvim-cmp"
     auto_completion_return_key_behavior = "complete"
     auto_completion_tab_key_behavior = "cycle"
@@ -154,3 +154,5 @@
   name = 'rafamadriz/friendly-snippets'
 [[custom_plugins]]
   name = 'ray-x/lsp_signature.nvim'
+[[custom_plugins]]
+  name ='sbdchd/neoformat'

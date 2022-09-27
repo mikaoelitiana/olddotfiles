@@ -38,6 +38,7 @@ function! myspacevim#before() abort
     set linebreak
     " nvim-cmp 
     inoremap <C-x><C-o> <Cmd>lua require('cmp').complete()<CR>
+    let g:ts_path_to_plugin = '~/.cache/vimfiles/repos/github.com/tbranyen/vim-typescript/'
 endfunction
 
 function! myspacevim#after() abort
@@ -49,9 +50,9 @@ function! myspacevim#after() abort
       \ 'stdin': 1,
       \ 'try_node_exe': 1,
     \ }
-    " let g:neoformat_enabled_javascript = ['prettier-eslint', 'prettierd',  'eslint_d']
-    " let g:neoformat_enabled_typescript = ['prettier-eslint', 'prettierd',  'eslint_d']
-    " let g:neoformat_enabled_typescriptreact = ['prettier-eslint', 'prettierd',  'eslint_d']
+    let g:neoformat_enabled_javascript = ['prettier-eslint', 'prettierd',  'eslint_d', 'prettier']
+    let g:neoformat_enabled_typescript = ['prettier-eslint', 'prettierd',  'eslint_d']
+    let g:neoformat_enabled_typescriptreact = ['prettier-eslint', 'prettierd',  'eslint_d']
     " github
     let g:github_dashboard = { 'username': 'mikaoelitiana', 'password': $GITHUB_TOKEN }
 
