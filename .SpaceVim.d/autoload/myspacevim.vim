@@ -38,7 +38,8 @@ function! myspacevim#before() abort
     set linebreak
     " nvim-cmp 
     inoremap <C-x><C-o> <Cmd>lua require('cmp').complete()<CR>
-    let g:ts_path_to_plugin = '~/.cache/vimfiles/repos/github.com/tbranyen/vim-typescript/'
+    " hide command bar
+    lua vim.o.ch = 0
 endfunction
 
 function! myspacevim#after() abort
