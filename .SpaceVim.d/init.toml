@@ -52,6 +52,8 @@
    name = 'core#statusline'
    enable = false
 [[layers]]
+    name = 'zettelkasten'
+[[layers]]
   name = 'shell'
   default_position = 'bottom'
   default_height = 20
