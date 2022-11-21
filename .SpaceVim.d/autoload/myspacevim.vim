@@ -17,8 +17,6 @@ function! myspacevim#before() abort
     " lazygit config
     call SpaceVim#custom#SPC('nore', ['g', 's'], 'FloatermNew lazygit', 'LazyGit', 1)
     call SpaceVim#custom#SPC('nore', ['g', 'h', 'c'], 'FloatermNew gh pr create', 'gh pr create', 1)
-    let g:test#custom_strategies = {'spacevim': function('SpaceVim#plugins#runner#open')}
-    let g:test#strategy = 'spacevim'
     let g:test#enabled_runners = ["javascript#mocha"]
     " search config
     set smartcase
@@ -38,8 +36,7 @@ function! myspacevim#before() abort
     set linebreak
     " nvim-cmp 
     inoremap <C-x><C-o> <Cmd>lua require('cmp').complete()<CR>
-    " hide command bar
-    lua vim.o.ch = 0
+    set winbar=%f
 endfunction
 
 function! myspacevim#after() abort
@@ -52,14 +49,13 @@ function! myspacevim#after() abort
       \ 'try_node_exe': 1,
     \ }
     let g:neoformat_enabled_javascript = ['prettier-eslint', 'prettierd',  'eslint_d', 'prettier']
-    let g:neoformat_enabled_typescript = ['prettier-eslint', 'prettierd',  'eslint_d']
-    let g:neoformat_enabled_typescriptreact = ['prettier-eslint', 'prettierd',  'eslint_d']
+    let g:neoformat_enabled_typescript = ['prettier-eslint', 'prettierd',  'eslint_d', 'prettier']
+    let g:neoformat_enabled_typescriptreact = ['prettier-eslint', 'prettierd',  'eslint_d', 'prettier']
     " github
     let g:github_dashboard = { 'username': 'mikaoelitiana', 'password': $GITHUB_TOKEN }
 
     call airline#add_statusline_func('WindowNumber')
     call airline#add_inactive_statusline_func('WindowNumber')
-
     for i in range(1, 9)
       exe "call SpaceVim#mapping#space#def('nnoremap', ["
             \ . i . "], 'call JumpToWindow("
@@ -72,25 +68,6 @@ function! myspacevim#after() abort
     " --------------------------------------------------------------------------------------- "
     " equivalent of init.lua
     lua << EOF
-    -- neotest
-    require("neotest").setup({
-     adapters = {
-       -- require('neotest-jest')({}),
-       require("neotest-vim-test")({
-         --  ignore_file_types = { "javascript", "typescript" }
-        })
-      }
-    })
-    require'nvim-treesitter.configs'.setup {
-      -- A list of parser names, or "all"
-      ensure_installed = { "typescript", "tsx", "javascript" },
-      -- Install parsers synchronously (only applied to `ensure_installed`)
-      sync_install = false,
-      highlight = {
-        enable = true,
-      },
-    }
-
     local lsp = require('lsp-zero')
     lsp.preset('recommended')
     lsp.setup()
@@ -101,50 +78,7 @@ function! myspacevim#after() abort
       max_width = 80,
     }
     require "lsp_signature".setup(signature_config)
-
-    -- Automatically enter insert mode when entering neovim terminal buffer
-    -- For neotest floating window, stopinsert
-    vim.api.nvim_create_autocmd("TermOpen", {
-      desc = "Auto enter insert mode when opening a terminal",
-      pattern = "*",
-      callback = function()
-        -- Wait briefly just in case we immediately switch out of the buffer
-        vim.defer_fn(function()
-          if vim.api.nvim_buf_get_option(0, 'buftype') == 'terminal' then
-            vim.cmd([[startinsert]])
-          else
-            vim.cmd([[stopinsert]])
-          end
-        end, 100)
-      end,
-    })
-
-    -- require("luasnip.loaders.from_vscode").lazy_load({paths = "~/.config/snippets/"})
 EOF
-endfunction
-
-function! SpaceVim#layers#core#statusline#get(...) abort
-  return 0
-endfunction
-
-function! SpaceVim#layers#test#config() abort
-  let g:_spacevim_mappings_space.k = get(g:_spacevim_mappings_space, 'k',  {'name' : '+Test'})
-  call SpaceVim#mapping#space#def('nnoremap', ['k', 'n'], 'lua require("neotest").run.run()', 'nearest', 1)
-  call SpaceVim#mapping#space#def('nnoremap', ['k', 'f'], 'lua require("neotest").run.run(vim.fn.expand("%"))', 'file', 1)
-  call SpaceVim#mapping#space#def('nnoremap', ['k', 'l'], 'lua require("neotest").run.run_last()', 'last', 1)
-  call SpaceVim#mapping#space#def('nnoremap', ['k', 's'], 'lua require("neotest").run.run({ suite = true })', 'suite', 1)
-  call SpaceVim#mapping#space#def('nnoremap', ['k', 'u'], 'lua require("neotest").summary.toggle()', 'jump-to-summary', 1)
-  call SpaceVim#mapping#space#def('nnoremap', ['k', 'U'], 'lua require("neotest").summary.toggle()', 'open-summary', 1)
-  call SpaceVim#mapping#space#def('nnoremap', ['k', 'k'], 'lua require("neotest").run.stop()', 'stop-nearest', 1)
-  call SpaceVim#mapping#space#def('nnoremap', ['k', 'K'], 'lua require("neotest").run.stop()', 'stop', 1)
-  call SpaceVim#mapping#space#def('nnoremap', ['k', 'a'], 'lua require("neotest").run.attach()', 'attach', 1)
-  call SpaceVim#mapping#space#def('nnoremap', ['k', 'd'], 'lua require("neotest").run.run({strategy = "dap"})', 'debug-nearest', 1)
-  call SpaceVim#mapping#space#def('nnoremap', ['k', 'D'], 'lua require("neotest").run.run({vim.fn.expand("%"), strategy = "dap"})', 'debug', 1)
-  call SpaceVim#mapping#space#def('nnoremap', ['k', 'j'], 'lua require("neotest").jump.next({ status = "failed" })', 'jump-to-next-failed', 0)
-  call SpaceVim#mapping#space#def('nnoremap', ['k', 'k'], 'lua require("neotest").jump.prev({ status = "failed" })', 'jump-to-prev-failed', 0)
-  call SpaceVim#mapping#space#def('nnoremap', ['k', 'o'], 'lua require("neotest").output.open({ enter = true })', 'show-output', 1)
-  let g:test#custom_strategies = {'spacevim': function('SpaceVim#plugins#runner#open')}
-  let g:test#strategy = 'spacevim'
 endfunction
 
 function! WindowNumber(...)
@@ -153,7 +87,6 @@ function! WindowNumber(...)
     call builder.add_section('airline_b', '%{tabpagewinnr(tabpagenr())}')
     return 0
 endfunction
-
 function! JumpToWindow(i) abort
   if s:WIN.win_count() >= a:i
     exe a:i . 'wincmd w'
