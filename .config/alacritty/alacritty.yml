@@ -1,6 +1,6 @@
 font:
   normal:
-    family: "SauceCodePro Nerd Font"
-    size: 20
+    family: "mononoki Nerd Font"
+  size: 14.0
 window:
   startup_mode: Fullscreen
