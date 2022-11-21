@@ -4,6 +4,8 @@ if status is-interactive
 end
 
 set -gx EDITOR nvim
+set -gx TF_VERSION latest
+set -gx ASDF_HASHICORP_OVERWRITE_ARCH amd64
 fish_add_path $HOME/Library/Python/3.9/bin
 
 # Google cloud sdk
