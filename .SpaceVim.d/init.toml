@@ -158,3 +158,5 @@
   name = 'ray-x/lsp_signature.nvim'
 [[custom_plugins]]
   name ='sbdchd/neoformat'
+[[custom_plugins]]
+  name ='Exafunction/codeium.vim'
