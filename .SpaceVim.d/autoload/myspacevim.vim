@@ -78,6 +78,20 @@ function! myspacevim#after() abort
       max_width = 80,
     }
     require "lsp_signature".setup(signature_config)
+    
+    local cmp = require('cmp')
+    cmp.setup {
+      mapping = {
+        ['<Tab>'] = cmp.mapping((function(fallback)
+          if cmp.visible() then
+            cmp.select_next_item()
+          else
+            vim.fn['codeium#Accept']()
+            fallback()
+          end
+        end, {'i', 's'})      
+      }
+    }
 EOF
 endfunction
 
