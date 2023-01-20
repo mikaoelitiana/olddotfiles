@@ -1,19 +1,10 @@
 function check_formatters
-    echo "checking eslint_d"
-    if npm ls -g eslint_d
-    else
-        npm i -g eslint_d
-    end
+    echo "installing eslint_d"
+    npm i -g eslint_d
 
-    echo "checking prettier-eslint"
-    if npm ls -g prettier-eslint-cli
-    else
-        npm i -g prettier-eslint-cli
-    end
+    echo "installing prettier-eslint"
+    npm i -g prettier-eslint-cli
 
-    echo "checking prettierd"
-    if npm ls -g @fsouza/prettierd
-    else
-        npm i -g @fsouza/prettierd
-    end
+    echo "installing prettierd"
+    npm i -g @fsouza/prettierd
 end
