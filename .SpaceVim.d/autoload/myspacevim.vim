@@ -89,7 +89,7 @@ function! myspacevim#after() abort
             vim.fn['codeium#Accept']()
             fallback()
           end
-        end, {'i', 's'})      
+        end), {'i', 's'})
       }
     }
 EOF
