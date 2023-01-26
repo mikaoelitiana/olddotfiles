@@ -44,3 +44,13 @@ require("lazy").setup({
     },
   },
 })
+
+require("neotest").setup({
+  adapters = {
+    require("neotest-plenary"),
+    require("neotest-jest"),
+    require("neotest-vim-test")({
+      ignore_file_types = { "python", "vim", "lua" },
+    }),
+  },
+})
