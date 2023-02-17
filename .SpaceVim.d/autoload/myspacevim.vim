@@ -18,6 +18,7 @@ function! myspacevim#before() abort
     call SpaceVim#custom#SPC('nore', ['g', 's'], 'FloatermNew lazygit', 'LazyGit', 1)
     call SpaceVim#custom#SPC('nore', ['g', 'h', 'c'], 'FloatermNew gh pr create', 'gh pr create', 1)
     let g:test#enabled_runners = ["javascript#mocha"]
+    let g:ultest_deprecation_notice = 0
     " search config
     set smartcase
     set ignorecase
