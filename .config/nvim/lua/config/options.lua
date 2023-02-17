@@ -3,3 +3,6 @@
 -- Add any additional options here
 
 vim.o.exrc = true
+
+-- tests
+vim.g["test#strategy"] = "dispatch"
