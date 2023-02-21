@@ -1,5 +1,7 @@
 return {
-  "vim-test/vim-test",
+  -- "vim-test/vim-test",
+  "https://github.com/mikaoelitiana/vim-test",
+  brahc = "optional-ts-node",
   dependencies = { "tpope/vim-dispatch" },
   keys = {
     {
@@ -20,7 +22,7 @@ return {
     {
       "<leader>ks",
       "<cmd>TestSuite<cr>",
-      desc = "Debug the nearest test",
+      desc = "Run test suite",
     },
     {
       "<leader>kg",
