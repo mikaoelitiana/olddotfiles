@@ -1,7 +1,7 @@
 return {
   -- "vim-test/vim-test",
   "https://github.com/mikaoelitiana/vim-test",
-  brahc = "optional-ts-node",
+  branch = "optional-ts-node",
   dependencies = { "tpope/vim-dispatch" },
   keys = {
     {
