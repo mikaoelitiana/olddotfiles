@@ -70,4 +70,33 @@ return {
       },
     },
   },
+  {
+    "stevearc/overseer.nvim",
+    config = function()
+      local overseer = require("overseer")
+      overseer.setup({
+        sections = {
+          lualine_x = { "overseer" },
+        },
+      })
+      overseer.register_template({
+        name = "tsc --watch",
+        builder = function()
+          return {
+            cmd = { "yarn", "tsc", "--watch", "--noEmit" }, -- or however you're running tsc --watch
+            components = {
+              {
+                "on_output_parse",
+                problem_matcher = "$tsc-watch",
+              },
+              "default",
+              "on_result_notify",
+              "on_result_diagnostics",
+              "on_complete_restart",
+            },
+          }
+        end,
+      })
+    end,
+  },
 }
