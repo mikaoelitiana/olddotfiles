@@ -58,11 +58,18 @@ return {
         adapters = {
           require("neotest-jest")({
             jestCommand = function()
-              local command = vim.api.nvim_get_var("neotest_jest_command")
-              if command then
-                return command
+              local function get_var(my_var_name, default_value)
+                s, v = pcall(function()
+                  return vim.api.nvim_get_var(my_var_name)
+                end)
+                if s then
+                  return v
+                else
+                  return default_value
+                end
               end
-              return "npm test --"
+
+              return get_var("neotest_jest_command", "npm test --")
             end,
           }),
         },
