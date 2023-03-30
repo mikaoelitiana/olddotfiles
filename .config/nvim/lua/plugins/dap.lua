@@ -1,3 +1,13 @@
+local wk = require("which-key")
+
+wk.register({
+  ["<leader>"] = {
+    d = {
+      name = "+debug",
+    },
+  },
+})
+
 return {
 
   {
@@ -9,6 +19,11 @@ return {
         config = true,
       },
       { "nvim-telescope/telescope-dap.nvim" },
+      { "rcarriga/nvim-dap-ui" },
+      {
+        "folke/neodev.nvim",
+        opts = { experimental = { pathStrict = true }, library = { plugins = { "nvim-dap-ui" }, types = true } },
+      },
     },
     config = function()
       require("telescope").load_extension("dap")
@@ -28,7 +43,19 @@ return {
         ["<leader>db"] = { name = "+breakpoints" },
         ["<leader>ds"] = { name = "+steps" },
         ["<leader>dv"] = { name = "+views" },
+        ["<leader>du"] = { name = "+dapui" },
       })
+      -- open/close dapui automatically
+      local dap, dapui = require("dap"), require("dapui")
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close()
+      end
     end,
     keys = {
       {
@@ -152,6 +179,13 @@ return {
           require("dap.ui.widgets").centered_float(require("dap.ui.widgets").threads, { border = "none" })
         end,
         desc = "Show Threads",
+      },
+      {
+        "<leader>dut",
+        function()
+          require("dapui").toggle()
+        end,
+        desc = "Toggle UI",
       },
     },
   },
