@@ -1,3 +1,15 @@
+local wk = require("which-key")
+
+wk.register({
+  ["<leader>"] = {
+    c = {
+      o = {
+        name = "+overseer",
+      },
+    },
+  },
+})
+
 return {
 
   -- add js to treesitter
@@ -98,5 +110,9 @@ return {
         end,
       })
     end,
+    keys = {
+      { "<leader>cot", "<cmd>OverseerToggle<cr>", desc = "Overseer Toggle" },
+      { "<leader>cor", "<cmd>OverseerRun<cr>", desc = "Overseer Run" },
+    },
   },
 }
