@@ -14,6 +14,9 @@ return {
     config = function()
       require("window-picker").setup()
     end,
+  },
+  {
+    "https://gitlab.com/yorickpeterse/nvim-window.git",
     keys = {
       {
         "<leader>wp",
