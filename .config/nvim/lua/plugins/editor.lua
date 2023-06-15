@@ -136,4 +136,32 @@ return {
       })
     end,
   },
+  {
+    "princejoogie/dir-telescope.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    opts = {
+      hidden = true,
+      show_preview = true,
+    },
+    config = function(_, opts)
+      require("dir-telescope").setup(opts)
+      require("telescope").load_extension("dir")
+    end,
+    keys = {
+      {
+        "<leader>fd",
+        function()
+          require("telescope").extensions.dir.live_grep()
+        end,
+        desc = "Livre grep in selected directory",
+      },
+      {
+        "<leader>fD",
+        function()
+          require("telescope").extensions.dir.find_files()
+        end,
+        desc = "Find file in selected directory",
+      },
+    },
+  },
 }
