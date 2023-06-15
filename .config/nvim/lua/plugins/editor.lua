@@ -140,8 +140,9 @@ return {
     "princejoogie/dir-telescope.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
     opts = {
-      hidden = true,
+      hidden = false,
       show_preview = true,
+      no_ignore = true,
     },
     config = function(_, opts)
       require("dir-telescope").setup(opts)
