@@ -149,14 +149,14 @@ return {
     end,
     keys = {
       {
-        "<leader>fd",
+        "<leader>se",
         function()
           require("telescope").extensions.dir.live_grep()
         end,
-        desc = "Livre grep in selected directory",
+        desc = "Live grep in selected directory",
       },
       {
-        "<leader>fD",
+        "<leader>fd",
         function()
           require("telescope").extensions.dir.find_files()
         end,
