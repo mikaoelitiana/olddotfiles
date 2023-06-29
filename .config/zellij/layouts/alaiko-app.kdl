@@ -1,0 +1,30 @@
+layout {
+    tab {
+      pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+      }
+      pane {
+        cwd "/Users/mikaoelitiana/Workspace/alaiko-rn-app/"
+        command "nvim"
+        args "."
+      }
+      pane size=2 borderless=true {
+        plugin location="zellij:status-bar"
+      }
+    }
+    tab {
+      pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+      }
+      pane {
+        cwd "/Users/mikaoelitiana/Workspace/alaiko-rn-app/"
+        command "yarn"
+        args "start"
+      }
+      pane
+      pane size=2 borderless=true {
+        plugin location="zellij:status-bar"
+      }
+    }
+    
+}
