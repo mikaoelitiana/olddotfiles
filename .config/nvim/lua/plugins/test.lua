@@ -28,7 +28,7 @@ return {
     opts = function(_, opts)
       local mocha_util = require("neotest-mocha.util")
       local is_mocha_test_file = mocha_util.create_test_file_extensions_matcher(
-        { "-test-" },
+        { "-test" },
         { "js", "mjs", "cjs", "jsx", "coffee", "ts", "tsx" }
       )
 
@@ -52,6 +52,10 @@ return {
         enabled = true,
         signs = true,
         virtual_text = false,
+      }
+
+      opts.consumers = {
+        overseer = require("neotest.consumers.overseer"),
       }
     end,
     keys = {
