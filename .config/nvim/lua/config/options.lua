@@ -6,3 +6,8 @@ vim.o.exrc = true
 
 -- tests
 vim.g["test#strategy"] = "dispatch"
+
+-- ensure signcolumn is always enabled
+require("lazyvim.util").on_attach(function()
+  vim.opt.signcolumn = "yes"
+end)
