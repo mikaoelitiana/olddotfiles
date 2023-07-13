@@ -20,55 +20,35 @@ wk.register({
 })
 
 return {
-  {
-    -- "vim-test/vim-test",
-    "https://github.com/mikaoelitiana/vim-test",
-    branch = "optional-ts-node",
-    dependencies = { "tpope/vim-dispatch" },
-    keys = {
-      {
-        "<leader>kn",
-        "<cmd>TestNearest<cr>",
-        desc = "Run the nearest test",
-      },
-      {
-        "<leader>kl",
-        "<cmd>TestLast<cr>",
-        desc = "Debug the last test",
-      },
-      {
-        "<leader>kf",
-        "<cmd>TestFile<cr>",
-        desc = "Run current file",
-      },
-      {
-        "<leader>ks",
-        "<cmd>TestSuite<cr>",
-        desc = "Run test suite",
-      },
-      {
-        "<leader>kg",
-        "<cmd>TestVisit<cr>",
-        desc = "Open test output",
-      },
-    },
-  },
   { "nvim-lua/plenary.nvim" },
-  { "https://github.com/mikaoelitiana/vim-test" },
   { "antoinemadec/FixCursorHold.nvim" },
-  { "haydenmeade/neotest-jest" },
-  { "nvim-neotest/neotest-vim-test" },
   {
     "nvim-neotest/neotest",
+    dependencies = { "adrigzr/neotest-mocha", "haydenmeade/neotest-jest" },
     opts = function()
+      local mocha_util = require("neotest-mocha.util")
+      local is_mocha_test_file = mocha_util.create_test_file_extensions_matcher(
+        { "-test-" },
+        { "js", "mjs", "cjs", "jsx", "coffee", "ts", "tsx" }
+      )
+
       return {
+        log_level = 1,
         adapters = {
           ["neotest-jest"] = {
             jestCommand = function()
               return get_var("neotest_jest_command", "npm test --")
             end,
           },
-          ["neotest-vim-test"] = {},
+          -- ["neotest-vim-test"] = {},
+          ["neotest-mocha"] = {
+            command = get_var("neotest_mocha_command", "npm test --"),
+            env = { CI = true },
+            cwd = function(path)
+              return vim.fn.getcwd()
+            end,
+            is_test_file = neotest_mocha_is_test_file ~= nil and neotest_mocha_is_test_file or is_mocha_test_file,
+          },
         },
         consumers = {
           overseer = require("neotest.consumers.overseer"),
