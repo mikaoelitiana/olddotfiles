@@ -25,35 +25,31 @@ return {
   {
     "nvim-neotest/neotest",
     dependencies = { "adrigzr/neotest-mocha", "haydenmeade/neotest-jest" },
-    opts = function()
+    opts = function(_, opts)
       local mocha_util = require("neotest-mocha.util")
       local is_mocha_test_file = mocha_util.create_test_file_extensions_matcher(
         { "-test-" },
         { "js", "mjs", "cjs", "jsx", "coffee", "ts", "tsx" }
       )
 
-      return {
-        log_level = 1,
-        adapters = {
-          ["neotest-jest"] = {
-            jestCommand = function()
-              return get_var("neotest_jest_command", "npm test --")
-            end,
-          },
-          -- ["neotest-vim-test"] = {},
-          ["neotest-mocha"] = {
-            command = get_var("neotest_mocha_command", "npm test --"),
-            env = { CI = true },
-            cwd = function(path)
-              return vim.fn.getcwd()
-            end,
-            is_test_file = neotest_mocha_is_test_file ~= nil and neotest_mocha_is_test_file or is_mocha_test_file,
-          },
+      opts.adapters = {
+        ["neotest-jest"] = {
+          jestCommand = function()
+            return get_var("neotest_jest_command", "npm test --")
+          end,
         },
-        consumers = {
-          overseer = require("neotest.consumers.overseer"),
+        -- ["neotest-vim-test"] = {},
+        ["neotest-mocha"] = {
+          command = get_var("neotest_mocha_command", "npm test --"),
+          env = { CI = true },
+          cwd = function(path)
+            return vim.fn.getcwd()
+          end,
+          is_test_file = neotest_mocha_is_test_file ~= nil and neotest_mocha_is_test_file or is_mocha_test_file,
         },
       }
+
+      opts.consumers.overseer = require("neotest.consumers.overseer")
     end,
     keys = {
       --   {
