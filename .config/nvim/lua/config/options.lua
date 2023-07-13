@@ -2,10 +2,8 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- load .nvimrc files in projects root
 vim.o.exrc = true
-
--- tests
-vim.g["test#strategy"] = "dispatch"
 
 -- ensure signcolumn is always enabled
 require("lazyvim.util").on_attach(function()

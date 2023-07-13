@@ -38,7 +38,6 @@ return {
             return get_var("neotest_jest_command", "npm test --")
           end,
         },
-        -- ["neotest-vim-test"] = {},
         ["neotest-mocha"] = {
           command = get_var("neotest_mocha_command", "npm test --"),
           env = { CI = true },
@@ -49,7 +48,11 @@ return {
         },
       }
 
-      opts.consumers.overseer = require("neotest.consumers.overseer")
+      opts.status = {
+        enabled = true,
+        signs = true,
+        virtual_text = false,
+      }
     end,
     keys = {
       --   {
