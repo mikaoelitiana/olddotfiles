@@ -40,7 +40,7 @@ return {
         },
         ["neotest-mocha"] = {
           command = get_var("neotest_mocha_command", "npm test --"),
-          env = { CI = true },
+          env = neotest_mocha_env ~= nil and neotest_mocha_env or { CI = true },
           cwd = function(path)
             return vim.fn.getcwd()
           end,
