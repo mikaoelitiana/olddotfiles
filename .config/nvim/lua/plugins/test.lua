@@ -34,9 +34,8 @@ return {
 
       opts.adapters = {
         ["neotest-jest"] = {
-          jestCommand = function()
-            return get_var("neotest_jest_command", "npm test --")
-          end,
+          jestCommand = Neotest_jest_command ~= nil and Neotest_jest_command or "npm test --",
+          env = Neotest_jest_env ~= nil and Neotest_jest_env or { CI = true },
         },
         ["neotest-mocha"] = {
           command = get_var("neotest_mocha_command", "npm test --"),

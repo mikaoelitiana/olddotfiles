@@ -8,4 +8,5 @@ vim.o.exrc = true
 -- ensure signcolumn is always enabled
 require("lazyvim.util").on_attach(function()
   vim.opt.signcolumn = "yes"
+  vim.opt.conceallevel = 0
 end)
