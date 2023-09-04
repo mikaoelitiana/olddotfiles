@@ -27,46 +27,6 @@ return {
       vim.list_extend(opts.ensure_installed, { "eslint-lsp", "html-lsp", "js-debug-adapter" })
     end,
   },
-  -- {
-  --   "mxsdev/nvim-dap-vscode-js",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     local dap = require("dap")
-  --     local dap_js = require("dap-vscode-js")
-  --     local mason_registry = require("mason-registry")
-  --     local js_debug_pkg = mason_registry.get_package("js-debug-adapter")
-  --     local js_debug_path = js_debug_pkg:get_install_path()
-  --     dap_js.setup({
-  --       debugger_path = js_debug_path,
-  --       adapters = { "pwa-node", "node-terminal" }, -- which adapters to register in nvim-dap
-  --     })
-  --     for _, language in ipairs({ "javascript" }) do
-  --       dap.configurations[language] = {
-  --         {
-  --           type = "pwa-node",
-  --           request = "launch",
-  --           name = "Launch file (" .. language .. ")",
-  --           program = "${file}",
-  --           cwd = "${workspaceFolder}",
-  --         },
-  --         {
-  --           type = "pwa-node",
-  --           request = "attach",
-  --           name = "Attach to process",
-  --           processId = require("dap.utils").pick_process,
-  --           cwd = "${workspaceFolder}",
-  --           sourceMaps = true,
-  --           protocol = "inspector",
-  --           console = "integratedTerminal",
-  --           outputCapture = "std",
-  --         },
-  --       }
-  --     end
-
-  --     -- load .vscode/launch.js config file
-  --     require("dap.ext.vscode").load_launchjs()
-  --   end,
-  -- },
   {
     "neovim/nvim-lspconfig",
     opts = {

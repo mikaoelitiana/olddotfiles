@@ -255,6 +255,14 @@ return {
     event = "VeryLazy",
     config = function()
       require("nvim-surround").setup({
+        keymaps = {
+          normal = "ys",
+          delete = "ds",
+          visual = "S",
+          visual_line = "gS",
+          change = "cs",
+          change_line = "cS",
+        },
         -- Configuration here, or leave empty to use defaults
       })
     end,
