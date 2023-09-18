@@ -1,5 +1,23 @@
 return {
   {
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      { "windwp/nvim-ts-autotag" },
+    },
+    event = { "BufReadPre" },
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed, {
+        "typescript",
+        "javascript",
+      })
+      return vim.tbl_deep_extend("force", opts, {
+        autotag = {
+          enable = true,
+        },
+      })
+    end,
+  },
+  {
     "nvim-treesitter/nvim-treesitter-context",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     event = "VeryLazy",
@@ -251,14 +269,14 @@ return {
   },
   {
     "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    version = "*",
     event = "VeryLazy",
     config = function()
       require("nvim-surround").setup({
         keymaps = {
           normal = "ys",
           delete = "ds",
-          visual = "S",
+          visual = "Z",
           visual_line = "gS",
           change = "cs",
           change_line = "cS",
