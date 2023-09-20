@@ -276,7 +276,7 @@ return {
         keymaps = {
           normal = "ys",
           delete = "ds",
-          visual = "Z",
+          visual = "z",
           visual_line = "gS",
           change = "cs",
           change_line = "cS",
