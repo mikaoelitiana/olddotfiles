@@ -24,7 +24,7 @@ return {
   {
     "williamboman/mason.nvim",
     opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, { "eslint-lsp", "html-lsp", "js-debug-adapter" })
+      vim.list_extend(opts.ensure_installed, { "eslint-lsp", "html-lsp", "js-debug-adapter", "node-debug2-adapter" })
     end,
   },
   {

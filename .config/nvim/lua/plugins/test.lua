@@ -24,7 +24,7 @@ return {
   { "antoinemadec/FixCursorHold.nvim" },
   {
     "nvim-neotest/neotest",
-    dependencies = { "adrigzr/neotest-mocha", "nvim-neotest/neotest-jest" },
+    dependencies = { "adrigzr/neotest-mocha", "nvim-neotest/neotest-jest", "marilari88/neotest-vitest" },
     opts = function(_, opts)
       local mocha_util = require("neotest-mocha.util")
       local is_mocha_test_file = mocha_util.create_test_file_extensions_matcher(
@@ -45,6 +45,7 @@ return {
           end,
           is_test_file = neotest_mocha_is_test_file ~= nil and neotest_mocha_is_test_file or is_mocha_test_file,
         },
+        ["neotest-vitest"] = {},
       }
 
       opts.status = {
