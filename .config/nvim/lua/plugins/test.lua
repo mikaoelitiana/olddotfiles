@@ -22,9 +22,13 @@ wk.register({
 return {
   { "nvim-lua/plenary.nvim" },
   { "antoinemadec/FixCursorHold.nvim" },
+  { "adrigzr/neotest-mocha", commit = "765a4e976927174518bfe311a169780e4d3bf234" },
   {
     "nvim-neotest/neotest",
-    dependencies = { "adrigzr/neotest-mocha", "nvim-neotest/neotest-jest", "marilari88/neotest-vitest" },
+    dependencies = {
+      "nvim-neotest/neotest-jest",
+      "marilari88/neotest-vitest",
+    },
     opts = function(_, opts)
       local mocha_util = require("neotest-mocha.util")
       local is_mocha_test_file = mocha_util.create_test_file_extensions_matcher(
