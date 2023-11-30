@@ -2,6 +2,7 @@ os:
   editCommand: "nvim"
   editCommandTemplate: "{{editor}} +{{line}} -- {{filename}}"
 gui:
+  nerdFontsVersion: "3"
   theme:
     lightTheme: false
     activeBorderColor:
