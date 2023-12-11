@@ -26,6 +26,7 @@ return {
   {
     "nvim-neotest/neotest",
     dependencies = {
+      "nvim-treesitter/nvim-treesitter", -- should fix https://github.com/nvim-neotest/neotest-jest/issues/85
       "nvim-neotest/neotest-jest",
       "marilari88/neotest-vitest",
     },
