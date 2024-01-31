@@ -19,10 +19,31 @@ wk.register({
   },
 })
 
+local M = {}
+
+function M.create_test_file_extensions_matcher(intermediate_extensions, end_extensions)
+  return function(file_path)
+    if file_path == nil then
+      return false
+    end
+
+    for _, iext in ipairs(intermediate_extensions) do
+      for _, eext in ipairs(end_extensions) do
+        if string.match(file_path, iext .. "%." .. eext .. "$") then
+          return true
+        end
+      end
+    end
+
+    return false
+  end
+end
+
 return {
   { "nvim-lua/plenary.nvim" },
   { "antoinemadec/FixCursorHold.nvim" },
-  { "adrigzr/neotest-mocha", commit = "765a4e976927174518bfe311a169780e4d3bf234" },
+  -- { "adrigzr/neotest-mocha" },
+  { "https://github.com/mikaoelitiana/neotest-mocha" },
   {
     "nvim-neotest/neotest",
     dependencies = {
@@ -31,11 +52,7 @@ return {
       "marilari88/neotest-vitest",
     },
     opts = function(_, opts)
-      local mocha_util = require("neotest-mocha.util")
-      local is_mocha_test_file = mocha_util.create_test_file_extensions_matcher(
-        { "-test" },
-        { "js", "mjs", "cjs", "jsx", "coffee", "ts", "tsx" }
-      )
+      local is_mocha_test_file = M.create_test_file_extensions_matcher({ "-test" }, { "js", "jsx", "ts", "tsx" })
 
       opts.adapters = {
         ["neotest-jest"] = {
