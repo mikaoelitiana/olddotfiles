@@ -56,7 +56,7 @@ return {
 
       opts.adapters = {
         ["neotest-jest"] = {
-          jestCommand = Neotest_jest_command ~= nil and Neotest_jest_command or "npm test --",
+          jestCommand = Neotest_jest_command ~= nil and Neotest_jest_command or "npx jest --",
           env = Neotest_jest_env ~= nil and Neotest_jest_env or { CI = true },
         },
         ["neotest-mocha"] = {
