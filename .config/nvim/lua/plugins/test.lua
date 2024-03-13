@@ -42,8 +42,7 @@ end
 return {
   { "nvim-lua/plenary.nvim" },
   { "antoinemadec/FixCursorHold.nvim" },
-  -- { "adrigzr/neotest-mocha" },
-  { "https://github.com/mikaoelitiana/neotest-mocha" },
+  { "adrigzr/neotest-mocha" },
   {
     "nvim-neotest/neotest",
     dependencies = {
