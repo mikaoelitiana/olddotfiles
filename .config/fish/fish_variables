@@ -48,3 +48,4 @@ SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
 SETUVAR fish_user_paths:/Users/mikaoelitiana/bin/flutter/bin\x1e/Users/mikaoelitiana/Workspace/napi/tools/docker\x2dcompose\x2doverride\x1e/Users/mika/Library/Python/3\x2e9/bin\x1e/Users/mikaoelitiana/Library/Python/3\x2e9/bin\x1e/Users/mikaoelitiana/\x2ecargo/bin\x1e/Users/mika/\x2ecargo/bin\x1e/opt/homebrew/bin
+SETUVAR --export npm_config_python:/opt/homebrew/bin/python3\x2e11
