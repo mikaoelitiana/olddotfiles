@@ -1,0 +1,6 @@
+font:
+  normal:
+    family: "mononoki Nerd Font"
+  size: 14.0
+window:
+  startup_mode: Fullscreen
