@@ -18,7 +18,8 @@ homebrew {
     "fish",
     "kitty",
     "colima",
-    "neovim --HEAD"
+    "neovim --HEAD",
+    "--cask dbeaver-community"
   ]
 }
 
