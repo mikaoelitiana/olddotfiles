@@ -8,7 +8,8 @@ packages = [
   "zellij",
   "nodePackages_latest.typescript-language-server",
   "nodePackages.neovim",
-  "vimPlugins.LazyVim"
+  "vimPlugins.LazyVim",
+  "cargo"
 ]
 
 homebrew {
@@ -16,7 +17,7 @@ homebrew {
     "fish",
     "kitty",
     "colima",
-    "dbeaver-community"
+    "neovim --HEAD"
   ]
 }
 

@@ -1,7 +1,8 @@
 {
   "extras": [
     "lazyvim.plugins.extras.coding.copilot",
-    "lazyvim.plugins.extras.editor.aerial"
+    "lazyvim.plugins.extras.editor.aerial",
+    "lazyvim.plugins.extras.lang.rust"
   ],
   "news": {
     "NEWS.md": "3314"
