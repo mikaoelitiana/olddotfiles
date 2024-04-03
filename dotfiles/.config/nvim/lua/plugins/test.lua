@@ -49,6 +49,11 @@ return {
       "nvim-treesitter/nvim-treesitter", -- should fix https://github.com/nvim-neotest/neotest-jest/issues/85
       "nvim-neotest/neotest-jest",
       "marilari88/neotest-vitest",
+      {
+        "mrcjkb/rustaceanvim",
+        version = "^4", -- Recommended
+        ft = { "rust" },
+      },
     },
     opts = function(_, opts)
       local is_mocha_test_file = M.create_test_file_extensions_matcher({ "-test" }, { "js", "jsx", "ts", "tsx" })
@@ -67,6 +72,7 @@ return {
           is_test_file = neotest_mocha_is_test_file ~= nil and neotest_mocha_is_test_file or is_mocha_test_file,
         },
         ["neotest-vitest"] = {},
+        ["rustaceanvim.neotest"] = {},
       }
 
       opts.status = {
