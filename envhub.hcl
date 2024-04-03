@@ -15,7 +15,8 @@ homebrew {
   packages = [
     "fish",
     "kitty",
-    "colima"
+    "colima",
+    "dbeaver-community"
   ]
 }
 
