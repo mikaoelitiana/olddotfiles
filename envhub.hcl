@@ -107,5 +107,5 @@ file ".config/zellij/config.kdl" {
 }
 
 file "Library/Application Support/lazygit/config.yml" {
-  source = "Library/Application Support/lazygit/config.yml"
+  source = "Library/Application-Support/lazygit/config.yml"
 }
