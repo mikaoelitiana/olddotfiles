@@ -1,6 +1,6 @@
 packages = [
-  "asdf-vm",
   "cargo",
+  "eslint_d",
   "fish",
   "gh",
   "go",
@@ -8,6 +8,7 @@ packages = [
   "mononoki",
   "nodePackages.neovim",
   "nodePackages_latest.typescript-language-server",
+  "prettierd",
   "vimPlugins.LazyVim",
   "zellij",
 ]
@@ -17,6 +18,9 @@ homebrew {
     "--cask dbeaver-community",
     "--cask gitbutler",
     "--cask kitty",
+    "asdf",
+    "gawk"
+    "gpg",
     "bruno",
     "colima",
     "fish",
@@ -26,7 +30,7 @@ homebrew {
     "neovim --HEAD",
     "neovim",
     "neovim-remote",
-    "vault"
+    "vault",
   ]
 }
 
