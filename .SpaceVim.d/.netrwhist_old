@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
-let g:netrw_dirhist_4='/Users/mikaoelitiana/Workspace/alaiko-strapi-api'
-let g:netrw_dirhist_3='/Users/mikaoelitiana/Workspace/alaiko-rn-app'
-let g:netrw_dirhist_2='/Users/mikaoelitiana/Workspace/alaiko-strapi-api/middlewares'
-let g:netrw_dirhist_1='/Users/mikaoelitiana/Workspace/alaiko-strapi-api'
