@@ -94,3 +94,7 @@ file ".config/nvim/lua/plugins/test.lua" {
 file ".config/nvim/lua/plugins/window.lua" {
   source = ".config/nvim/lua/plugins/window.lua"
 }
+
+file ".config/zellij/config.kdl" {
+  source = ".config/zellij/config.kdl"
+}
