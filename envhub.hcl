@@ -18,7 +18,8 @@ homebrew {
     "--cask kitty",
     "colima",
     "neovim --HEAD",
-    "--cask dbeaver-community"
+    "--cask dbeaver-community",
+    "--cask gitbutler"
   ]
 }
 
