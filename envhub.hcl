@@ -5,7 +5,6 @@ packages = [
   "gh",
   "go",
   "lazygit",
-  "lazygit",
   "mononoki",
   "nodePackages.neovim",
   "nodePackages_latest.typescript-language-server",
@@ -16,7 +15,7 @@ packages = [
 homebrew {
   packages = [
     "fish",
-    "kitty",
+    "--cask kitty",
     "colima",
     "neovim --HEAD",
     "--cask dbeaver-community"
