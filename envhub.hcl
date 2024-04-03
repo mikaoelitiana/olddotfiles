@@ -1,15 +1,16 @@
 packages = [
-  "lazygit",
-  "mononoki",
+  "asdf-vm",
+  "cargo",
   "fish",
   "gh",
+  "go",
   "lazygit",
-  "asdf-vm",
-  "zellij",
-  "nodePackages_latest.typescript-language-server",
+  "lazygit",
+  "mononoki",
   "nodePackages.neovim",
+  "nodePackages_latest.typescript-language-server",
   "vimPlugins.LazyVim",
-  "cargo"
+  "zellij",
 ]
 
 homebrew {
@@ -27,4 +28,20 @@ envs {
 
 file ".npmrc" {
   source = ".npmrc"
+}
+
+file ".config/nvim/lua/config/lazy.lua" {
+  source = ".config/nvim/lua/config/lazy.lua"
+}
+
+file ".config/nvim/lua/config/autocmds.lua" {
+  source = ".config/nvim/lua/config/autocmds.lua"
+}
+
+file ".config/nvim/lua/config/keymaps.lua" {
+  source = ".config/nvim/lua/config/keymaps.lua"
+}
+
+file ".config/nvim/lua/config/options.lua" {
+  source = ".config/nvim/lua/config/options.lua"
 }
