@@ -105,3 +105,7 @@ file ".config/nvim/lua/plugins/window.lua" {
 file ".config/zellij/config.kdl" {
   source = ".config/zellij/config.kdl"
 }
+
+file "Library/Application Support/lazygit/config.yml" {
+  source = "Library/Application Support/lazygit/config.yml"
+}
