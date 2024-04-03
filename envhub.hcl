@@ -14,12 +14,19 @@ packages = [
 
 homebrew {
   packages = [
-    "fish",
-    "--cask kitty",
-    "colima",
-    "neovim --HEAD",
     "--cask dbeaver-community",
-    "--cask gitbutler"
+    "--cask gitbutler",
+    "--cask kitty",
+    "bruno",
+    "colima",
+    "fish",
+    "jq",
+    "libdap",
+    "lua-language-server",
+    "neovim --HEAD",
+    "neovim",
+    "neovim-remote",
+    "vault"
   ]
 }
 
