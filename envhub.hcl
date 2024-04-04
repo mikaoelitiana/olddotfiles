@@ -17,9 +17,10 @@ homebrew {
   packages = [
     "--cask dbeaver-community",
     "--cask gitbutler",
+    "--cask google-cloud-sdk",
     "--cask kitty",
     "asdf",
-    "gawk"
+    "gawk",
     "gpg",
     "bruno",
     "colima",
@@ -30,6 +31,7 @@ homebrew {
     "neovim --HEAD",
     "neovim",
     "neovim-remote",
+    "tsirysndr/tap/envhub",
     "vault",
   ]
 }
