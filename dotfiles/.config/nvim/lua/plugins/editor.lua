@@ -9,6 +9,7 @@ return {
       vim.list_extend(opts.ensure_installed, {
         "typescript",
         "javascript",
+        "hcl",
       })
       return vim.tbl_deep_extend("force", opts, {
         autotag = {
