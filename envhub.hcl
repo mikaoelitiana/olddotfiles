@@ -33,6 +33,8 @@ homebrew {
     "neovim-remote",
     "tsirysndr/tap/envhub",
     "vault",
+    "elasticsearch",
+    "rabbitmq"
   ]
 }
 
